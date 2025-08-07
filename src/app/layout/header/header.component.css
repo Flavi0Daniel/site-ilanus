@@ -1,0 +1,206 @@
+/* header.component.css */
+
+/* Navbar Base Styles */
+.navbar {
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+  z-index: 1050;
+}
+
+/* Transparent navbar for homepage hero */
+.navbar-transparent {
+  background-color: transparent !important;
+  backdrop-filter: none;
+}
+
+/* Solid navbar for other pages or when scrolled */
+.navbar-solid {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Brand Styles */
+.navbar-brand {
+  padding: 0;
+  margin-right: 2rem;
+  text-decoration: none;
+}
+
+.brand-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.brand-subtitle {
+  font-size: 0.7rem;
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: -2px;
+  transition: color 0.3s ease;
+}
+
+/* Brand colors for solid navbar */
+.navbar-solid .brand-name {
+  color: #2c3e50;
+}
+
+.navbar-solid .brand-subtitle {
+  color: #6c757d;
+}
+
+/* Navigation Links */
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem !important;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-solid .navbar-nav .nav-link {
+  color: #2c3e50 !important;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.navbar-solid .navbar-nav .nav-link:hover {
+  background-color: rgba(108, 117, 125, 0.1);
+  color: #007bff !important;
+}
+
+/* Active link styles */
+.navbar-nav .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff !important;
+}
+
+.navbar-solid .navbar-nav .nav-link.active {
+  background-color: #007bff;
+  color: #ffffff !important;
+}
+
+/* Mobile Toggle Button */
+.navbar-toggler {
+  border: none;
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+}
+
+.custom-toggler {
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  padding: 5px 8px;
+}
+
+.navbar-solid .custom-toggler {
+  border-color: #2c3e50;
+}
+
+.navbar-toggler i {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.navbar-solid .navbar-toggler i {
+  color: #2c3e50;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Mobile Menu Styles */
+.navbar-collapse {
+  transition: all 0.3s ease;
+}
+
+/* Icon styles */
+.nav-link i {
+  font-size: 0.9rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 991.98px) {
+  .navbar {
+    padding: 0.5rem 0;
+  }
+  
+  .brand-name {
+    font-size: 1.5rem;
+  }
+  
+  .brand-subtitle {
+    font-size: 0.6rem;
+  }
+  
+  .navbar-collapse {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-transparent .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .navbar-nav .nav-link {
+    color: #2c3e50 !important;
+    margin: 0.2rem 0;
+    padding: 0.75rem 1rem !important;
+    border-radius: 8px;
+  }
+  
+  .navbar-transparent .navbar-nav .nav-link {
+    color: #ffffff !important;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transform: none;
+  }
+  
+  .navbar-nav .nav-link.active {
+    background-color: #007bff;
+    color: #ffffff !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .brand-name {
+    font-size: 1.3rem;
+  }
+  
+  .brand-subtitle {
+    font-size: 0.55rem;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* Smooth animations */
+* {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}

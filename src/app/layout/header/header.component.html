@@ -1,0 +1,68 @@
+<!-- header.component.html -->
+<nav class="navbar navbar-expand-lg fixed-top" 
+     [ngClass]="{
+       'navbar-transparent': isHomePage && !isScrolled,
+       'navbar-solid': !isHomePage || isScrolled
+     }">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand" routerLink="/" (click)="closeMenu()">
+      <div class="brand-container">
+        <span class="brand-name">Ilanus</span>
+        <small class="brand-subtitle">FORMAÇÃO & ESTÁGIOS PROFISSIONAL</small>
+      </div>
+    </a>
+
+    <!-- Mobile menu toggle -->
+    <button class="navbar-toggler custom-toggler" 
+            type="button" 
+            (click)="toggleMenu()"
+            [attr.aria-expanded]="isMenuOpen"
+            aria-label="Toggle navigation">
+      <i class="bi" [ngClass]="isMenuOpen ? 'bi-x-lg' : 'bi-list'"></i>
+    </button>
+
+    <!-- Navigation Menu -->
+    <div class="navbar-collapse" [ngClass]="{'show': isMenuOpen}">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" 
+             routerLink="/" 
+             routerLinkActive="active" 
+             [routerLinkActiveOptions]="{exact: true}"
+             (click)="closeMenu()">
+            <i class="bi bi-house me-1"></i>
+            Início
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             routerLink="/sobre-nos" 
+             routerLinkActive="active"
+             (click)="closeMenu()">
+            <i class="bi bi-people me-1"></i>
+            Sobre Nós
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             routerLink="/servicos" 
+             routerLinkActive="active"
+             (click)="closeMenu()">
+            <i class="bi bi-briefcase me-1"></i>
+            Serviços
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             routerLink="/contactos" 
+             routerLinkActive="active"
+             (click)="closeMenu()">
+            <i class="bi bi-envelope me-1"></i>
+            Contactos
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

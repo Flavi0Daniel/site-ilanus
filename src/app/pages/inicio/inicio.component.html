@@ -1,0 +1,395 @@
+<!-- Hero Section -->
+<app-hero></app-hero>
+
+<!-- About Section -->
+<section class="about-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <img src="../../../assets/Uma empresa.jpg" alt="Uma empresa especializada" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-lg-6">
+        <div class="about-content ps-lg-4 mt-4 mt-lg-0">
+          <h2 class="section-title mb-4">Uma empresa especializada em renovar o seu negócio</h2>
+          <p class="lead mb-4">
+            Ilanus é uma empresa especialista em programas de estágios e treinamentos profissionais. 
+            Oferemos a melhor experiência para organizações e indivíduos motivados em desenvolver 
+            competências profissionais e aumentar sua produtividade.
+          </p>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <!-- Estágio Card -->
+      <div class="col-md-6 mb-4">
+        <div class="service-card h-100 border border-primary">
+          <div class="service-header bg-primary text-white text-center py-3">
+            <h3>Estágio</h3>
+          </div>
+          <div class="service-body p-4">
+            <p class="service-description mb-4">
+              Ideal para instituições de ensino, que queiram agregar valor aos seus serviços de formação, 
+              bem como aos estudantes que queiram desenvolver competências, fazendo parte de realidades 
+              laborais desafiadoras e produtivas.
+            </p>
+            
+            <div class="service-icon mb-4 text-center">
+              <div class="icon-placeholder bg-dark text-white rounded p-3 d-inline-block">
+               <!-- <img src="../../../assets/Estágio.png" alt="">  -->
+                <i class="bi bi-person-workspace" style="font-size: 3rem;"></i>
+              </div>
+            </div>
+
+            <p class="service-info mb-4">
+              As nossas soluções de formações profissionais assentam em 5 áreas, cada área com os cursos personalizados com o propósito 
+              dar-lhe as melhores competências profissionais.
+            </p>
+
+            <div class="service-areas">
+              <div class="row g-2">
+                <div class="col-6">
+                  <button class="service-area-btn btn btn-secondary w-100" (click)="navigateToServices()">
+                    Economia, Gestão, Finanças e Contabilidade
+                  </button>
+                </div>
+                <div class="col-6">
+                  <button class="service-area-btn btn btn-secondary w-100" (click)="navigateToServices()">
+                    Engenharia Informática
+                  </button>
+                </div>
+                <div class="col-6">
+                  <button class="service-area-btn btn btn-secondary w-100" (click)="navigateToServices()">
+                    Direito
+                  </button>
+                </div>
+                <div class="col-6">
+                  <button class="service-area-btn btn btn-secondary w-100" (click)="navigateToServices()">
+                    Marketing
+                  </button>
+                </div>
+                <div class="col-6">
+                  <button class="service-area-btn btn btn-secondary w-100" (click)="navigateToServices()">
+                    Gestão de Recursos Humanos
+                  </button>
+                </div>
+                <div class="col-6">
+                  <button class="service-area-btn btn btn-secondary w-100" (click)="navigateToServices()">
+                    Comunicação Social
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <button class="btn btn-warning btn-lg px-4" (click)="navigateToServices()">SAIBA MAIS</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formação Card -->
+      <div class="col-md-6 mb-4">
+        <div class="service-card h-100 border border-info">
+          <div class="service-header bg-info text-white text-center py-3">
+            <h3>Formação</h3>
+          </div>
+          <div class="service-body p-4">
+            <p class="service-description mb-4">
+              Ideal para profissionais, estudantes, e todos que queiram qualificar-se e destacar-se no mercado 
+              de trabalho, aprender novas habilidades e competências.
+            </p>
+            
+            <div class="service-icon mb-4 text-center">
+              <div class="icon-placeholder bg-info text-white rounded p-3 d-inline-block">
+              <!--  <img src="../../../assets/Formaçao.jpg" alt="">  -->
+                <i class="bi bi-book" style="font-size: 3rem;"></i>
+              </div>
+            </div>
+
+            <p class="service-info mb-4">
+              As nossas soluções de formações profissionais assentam em 5 áreas, cada área com os cursos personalizados com o propósito 
+              dar-lhe as melhores competências profissionais.
+            </p>
+
+            <div class="service-areas">
+              <div class="row g-2">
+                <div class="col-6">
+                  <button class="service-area-btn btn btn-secondary w-100" (click)="navigateToServices()">
+                    Finanças (20 cursos)
+                  </button>
+                </div>
+                <div class="col-6">
+                  <button class="service-area-btn btn btn-secondary w-100" (click)="navigateToServices()">
+                    Gestão do RH (10 cursos)
+                  </button>
+                </div>
+                <div class="col-6">
+                  <button class="service-area-btn btn btn-secondary w-100" (click)="navigateToServices()">
+                    Engenharia Informática (10 cursos)
+                  </button>
+                </div>
+                <div class="col-6">
+                  <button class="service-area-btn btn btn-secondary w-100" (click)="navigateToServices()">
+                    Marketing (10 cursos)
+                  </button>
+                </div>
+                <div class="col-6">
+                  <button class="service-area-btn btn btn-secondary w-100" (click)="navigateToServices()">
+                    Empreendedorismo (30 cursos)
+                  </button>
+                </div>
+                <div class="col-6">
+                  <button class="service-area-btn btn btn-secondary w-100" (click)="navigateToServices()">
+                    Gestão (30 cursos)
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <button class="btn btn-warning btn-lg px-4" (click)="navigateToServices()">SAIBA MAIS</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="stats-section py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">PORQUÊ A ILANUS?</h2>
+      <p class="lead">LÍDERES EM ESTÁGIOS E FORMAÇÃO NO MERCADO PROFISSIONAL (EMPRESARIAL)</p>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="stat-item">
+          <div class="stat-icon mb-3">
+            <i class="bi bi-globe" style="font-size: 3rem; color: #007bff;"></i>
+          </div>
+          <h3>Formação</h3>
+          <p class="small">Inter-Empresas</p>
+          <p class="text-muted">Formação adaptada a múltiplos diferentes e necessários formandos</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="stat-item">
+          <div class="stat-icon mb-3">
+            <i class="bi bi-diagram-3" style="font-size: 3rem; color: #007bff;"></i>
+          </div>
+          <h3>Formação Corporate</h3>
+          <p class="small">Intra-Empresas</p>
+          <p class="text-muted">Formação adaptada às realidades de crescimento e necessidades empresas</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="stat-item">
+          <div class="stat-icon mb-3">
+            <i class="bi bi-star" style="font-size: 3rem; color: #007bff;"></i>
+          </div>
+          <h3>+ 290.000</h3>
+          <p class="small">HORAS DE FORMAÇÃO</p>
+          <h3>+ 80.000</h3>
+          <p class="small">PROFISSIONAIS FORMADOS</p>
+          <h3>4,8/5</h3>
+          <p class="small">AVALIAÇÃO DA FORMAÇÃO</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="stat-item">
+          <div class="stat-icon mb-3">
+            <i class="bi bi-award" style="font-size: 3rem; color: #ffa500;"></i>
+          </div>
+          <h3>CUSTOMER CARE</h3>
+          <p class="small">A EXCELÊNCIA NO SERVIÇO AO CLIENTE</p>
+          <h3>+ 700</h3>
+          <p class="small">FORMADORES ESPECIALISTAS</p>
+          <h3>+ 30</h3>
+          <p class="small">ÁREAS DE FORMAÇÃO CERTIFICADAS</p>
+          <h3>100%</h3>
+          <p class="small">GARANTIA DE REALIZAÇÃO</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="section-title text-center mb-5" style="color: #b8860b;">Clientes e Testemunhos</h2>
+      </div>
+    </div>
+    
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4">
+        <div class="testimonial-image">
+          <!-- Área para imagem dos clientes - será inserida manualmente -->
+          <div class="image-placeholder bg-light border rounded d-flex align-items-center justify-content-center" style="height: 300px;">
+            <span class="text-muted">Imagem dos Clientes</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="testimonials-content">
+          <!-- Testemunho 1 -->
+          <div class="testimonial-item mb-4 p-4 bg-white rounded shadow-sm">
+            <div class="quote-icon mb-3">
+              <i class="bi bi-quote" style="font-size: 2rem; color: #b8860b;"></i>
+            </div>
+            <p class="testimonial-text mb-3">
+              "Foi a melhor formação profissional com direito a estágio que já participei, exigiu muito de mim 
+              e sem dúvidas aumentou significativamente as minhas qualificações para o mercado de trabalho. 
+              Os professores são profissionais muito competentes o que tornou a minha experiência fascinante."
+            </p>
+            <div class="testimonial-author">
+              <strong>Zurique Buete</strong>
+              <br>
+              <small class="text-muted">Empreendedora e estudante universitária</small>
+            </div>
+          </div>
+
+          <!-- Testemunho 2 -->
+          <div class="testimonial-item mb-4 p-4 bg-white rounded shadow-sm">
+            <div class="quote-icon mb-3">
+              <i class="bi bi-quote" style="font-size: 2rem; color: #b8860b;"></i>
+            </div>
+            <p class="testimonial-text mb-3">
+              "Antes de fazer o estágio profissional na Arena Académica, não tinha noção do que é o mercado de trabalho. 
+              Estagiei na área administrativa como assistente e pude <strong>redigir documentos, fazer chamadas, fazer pesquisas, 
+              fazer atas, relatórios, orçamentos, ligações, agendamentos</strong>, entre outras coisas, aprendi muito saí satisfeito."
+            </p>
+            <div class="testimonial-author">
+              <strong>Estudante do Elsa Mina 1</strong>
+            </div>
+          </div>
+
+          <!-- Testemunho 3 -->
+          <div class="testimonial-item p-4 bg-white rounded shadow-sm">
+            <div class="quote-icon mb-3">
+              <i class="bi bi-quote" style="font-size: 2rem; color: #b8860b;"></i>
+            </div>
+            <p class="testimonial-text mb-3">
+              "O meu curso correu muito bem, graças a um formador que tem bastante dedicação e experiência acima de tudo e com bastante conhecimentos, devo dizer que aprendi muito com esta formação e que penso em voltar à Vantagem para outras formações, visto que em termos formadores e instalações são bastante acolhedores. Obrigado."
+            </p>
+            <div class="testimonial-author">
+              <strong>Emanuel Silva</strong>
+              <br>
+              <small class="text-muted">Sonagás</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partners Section -->
+<section class="partners-section py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="section-title text-center mb-5">Parceiros</h2>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+        <div class="partner-logo text-center p-3">
+          <div class="logo-placeholder bg-light border rounded d-flex align-items-center justify-content-center" style="height: 100px;">
+            <span class="small text-muted">ARENA</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+        <div class="partner-logo text-center p-3">
+          <div class="logo-placeholder bg-light border rounded d-flex align-items-center justify-content-center" style="height: 100px;">
+            <span class="small text-muted">CLESE</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+        <div class="partner-logo text-center p-3">
+          <div class="logo-placeholder bg-light border rounded d-flex align-items-center justify-content-center" style="height: 100px;">
+            <span class="small text-muted">A.A.S. GOMBO</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+        <div class="partner-logo text-center p-3">
+          <div class="logo-placeholder bg-light border rounded d-flex align-items-center justify-content-center" style="height: 100px;">
+            <span class="small text-muted">EC DOS SANTOS</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+        <div class="partner-logo text-center p-3">
+          <div class="logo-placeholder bg-light border rounded d-flex align-items-center justify-content-center" style="height: 100px;">
+            <span class="small text-muted">INFINITE</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+        <div class="partner-logo text-center p-3">
+          <div class="logo-placeholder bg-light border rounded d-flex align-items-center justify-content-center" style="height: 100px;">
+            <span class="small text-muted">PORTO DO SOYO</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+        <div class="partner-logo text-center p-3">
+          <div class="logo-placeholder bg-light border rounded d-flex align-items-center justify-content-center" style="height: 100px;">
+            <span class="small text-muted">DSS</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+        <div class="partner-logo text-center p-3">
+          <div class="logo-placeholder bg-light border rounded d-flex align-items-center justify-content-center" style="height: 100px;">
+            <span class="small text-muted">GRUPO GB KUBANGA</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+        <div class="partner-logo text-center p-3">
+          <div class="logo-placeholder bg-light border rounded d-flex align-items-center justify-content-center" style="height: 100px;">
+            <span class="small text-muted">PADARIA ASCENSÃO</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+        <div class="partner-logo text-center p-3">
+          <div class="logo-placeholder bg-light border rounded d-flex align-items-center justify-content-center" style="height: 100px;">
+            <span class="small text-muted">ASCENSÃO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
