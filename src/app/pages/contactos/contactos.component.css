@@ -1,0 +1,257 @@
+/* Seção Principal de Contato */
+.contact-section {
+  background-color: #f8f9fa;
+  padding: 120px 0 80px 0; /* Adicionado mais padding-top para separar do header */
+  min-height: calc(100vh - 80px); /* Ajustado para considerar o header */
+  display: flex;
+  align-items: center;
+}
+
+/* Badge de Contato */
+.contact-badge {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Subtítulo */
+.contact-subtitle {
+  color: #6c757d;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Container do Formulário */
+.contact-form-container {
+  background: white;
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+}
+
+/* Título do Formulário */
+.form-title {
+  color: #8b6f47;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 32px;
+  text-align: center;
+  position: relative;
+}
+
+.form-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: #8b6f47;
+}
+
+/* Inputs Customizados */
+.custom-input, .custom-textarea {
+  border: none;
+  border-bottom: 2px solid #e9ecef;
+  border-radius: 0;
+  padding: 12px 0;
+  font-size: 16px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus, .custom-textarea:focus {
+  border-bottom-color: #8b6f47;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.custom-input.is-invalid, .custom-textarea.is-invalid {
+  border-bottom-color: #dc3545;
+}
+
+.custom-input::placeholder, .custom-textarea::placeholder {
+  color: #adb5bd;
+  font-weight: 400;
+}
+
+.custom-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Mensagens de Erro */
+.invalid-feedback {
+  display: block;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* Botão Customizado */
+.btn-custom {
+  background-color: #8b6f47;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.btn-custom:hover {
+  background-color: #6d5235;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 111, 71, 0.3);
+}
+
+.btn-custom:disabled {
+  background-color: #adb5bd;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Seção de Informações */
+.info-section {
+  background-color: white;
+  padding: 80px 0;
+}
+
+/* Cards de Informação */
+.info-card {
+  padding: 40px 24px;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+/* Ícones */
+.icon-large {
+  font-size: 48px;
+  color: #8b6f47;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover .icon-large {
+  transform: scale(1.1);
+  color: #6d5235;
+}
+
+/* Títulos dos Cards */
+.info-title {
+  color: #8b6f47;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* Conteúdo dos Cards */
+.info-content {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.info-content a {
+  color: #6c757d;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.info-content a:hover {
+  color: #8b6f47;
+}
+
+.info-content i {
+  color: #8b6f47;
+}
+
+/* Alertas */
+.alert {
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 24px;
+}
+
+.alert-success {
+  background-color: #d1f2eb;
+  color: #0c5460;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Spinner */
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 100px 0 60px 0; /* Ajustado padding-top para mobile */
+  }
+  
+  .contact-form-container {
+    padding: 32px 24px;
+  }
+  
+  .form-title {
+    font-size: 24px;
+  }
+  
+  .info-section {
+    padding: 60px 0;
+  }
+  
+  .info-card {
+    padding: 32px 20px;
+    margin-bottom: 24px;
+  }
+  
+  .icon-large {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 80px 0 40px 0; /* Ajustado para telas muito pequenas */
+  }
+
+  .contact-form-container {
+    padding: 24px 16px;
+  }
+  
+  .form-title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  
+  .custom-input, .custom-textarea {
+    font-size: 14px;
+  }
+  
+  .btn-custom {
+    padding: 10px 32px;
+    font-size: 14px;
+  }
+}

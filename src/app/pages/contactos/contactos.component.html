@@ -1,2 +1,161 @@
-<p>contactos works!</p>
-<p>944392213</p>
+<!-- Seção Contato -->
+<section class="contact-section">
+  <div class="container">
+    <!-- Header -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 text-center">
+        <span class="contact-badge">CONTATO</span>
+        <p class="contact-subtitle mt-3">
+          Caso precise de algum de nossos serviços, entre em contato da melhor forma para você.
+        </p>
+      </div>
+    </div>
+
+    <!-- Formulário de Contato -->
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="contact-form-container">
+          <h2 class="form-title">Entre em Contato</h2>
+          
+          <!-- Mensagem de Status -->
+          <div *ngIf="submitMessage" 
+               class="alert" 
+               [ngClass]="{'alert-success': submitMessageType === 'success', 'alert-danger': submitMessageType === 'error'}">
+            {{ submitMessage }}
+          </div>
+
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="row">
+              <!-- Nome e Email -->
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <input 
+                    type="text" 
+                    class="form-control custom-input" 
+                    placeholder="Nome"
+                    formControlName="nome"
+                    [class.is-invalid]="nome?.invalid && nome?.touched">
+                  <div *ngIf="nome?.invalid && nome?.touched" class="invalid-feedback">
+                    <div *ngIf="nome?.errors?.['required']">Nome é obrigatório</div>
+                    <div *ngIf="nome?.errors?.['minlength']">Nome deve ter pelo menos 2 caracteres</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <input 
+                    type="email" 
+                    class="form-control custom-input" 
+                    placeholder="Email"
+                    formControlName="email"
+                    [class.is-invalid]="email?.invalid && email?.touched">
+                  <div *ngIf="email?.invalid && email?.touched" class="invalid-feedback">
+                    <div *ngIf="email?.errors?.['required']">Email é obrigatório</div>
+                    <div *ngIf="email?.errors?.['email']">Email deve ter um formato válido</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Assunto -->
+            <div class="mb-3">
+              <div class="form-group">
+                <input 
+                  type="text" 
+                  class="form-control custom-input" 
+                  placeholder="Assunto"
+                  formControlName="assunto"
+                  [class.is-invalid]="assunto?.invalid && assunto?.touched">
+                <div *ngIf="assunto?.invalid && assunto?.touched" class="invalid-feedback">
+                  <div *ngIf="assunto?.errors?.['required']">Assunto é obrigatório</div>
+                  <div *ngIf="assunto?.errors?.['minlength']">Assunto deve ter pelo menos 3 caracteres</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mensagem -->
+            <div class="mb-4">
+              <div class="form-group">
+                <textarea 
+                  class="form-control custom-textarea" 
+                  rows="5" 
+                  placeholder="Digite sua mensagem aqui..."
+                  formControlName="mensagem"
+                  [class.is-invalid]="mensagem?.invalid && mensagem?.touched"></textarea>
+                <div *ngIf="mensagem?.invalid && mensagem?.touched" class="invalid-feedback">
+                  <div *ngIf="mensagem?.errors?.['required']">Mensagem é obrigatória</div>
+                  <div *ngIf="mensagem?.errors?.['minlength']">Mensagem deve ter pelo menos 10 caracteres</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botão Enviar -->
+            <div class="text-center">
+              <button 
+                type="submit" 
+                class="btn btn-custom" 
+                [disabled]="isSubmitting">
+                <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                {{ isSubmitting ? 'Enviando...' : 'Enviar' }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção Informações de Contato -->
+<section class="info-section">
+  <div class="container">
+    <div class="row">
+      <!-- Funcionamento -->
+      <div class="col-lg-4 mb-4">
+        <div class="info-card text-center h-100">
+          <i class="bi bi-clock icon-large mb-3"></i>
+          <h5 class="info-title">Funcionamento</h5>
+          <div class="info-content">
+            <p class="mb-1">Seg - Sex: 8h - 20h</p>
+            <p class="mb-0">Sábado: 9h - 19h</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vamos Conversar -->
+      <div class="col-lg-4 mb-4">
+        <div class="info-card text-center h-100">
+          <i class="bi bi-chat-dots icon-large mb-3"></i>
+          <h5 class="info-title">Vamos Conversar</h5>
+          <div class="info-content">
+            <p class="mb-1">
+              <i class="bi bi-telephone me-2"></i>
+              <a href="tel:+244949193887">+244 949 193 887</a>
+            </p>
+            <p class="mb-1">
+              <i class="bi bi-telephone me-2"></i>
+              <a href="tel:+244952376408">+244 952 376 408</a>
+            </p>
+            <p class="mb-0">
+              <i class="bi bi-envelope me-2"></i>
+              <a href="mailto:joelcbongue.aca@outlook.com">joelcbongue.aca@outlook.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Faça uma Visita -->
+      <div class="col-lg-4 mb-4">
+        <div class="info-card text-center h-100">
+          <i class="bi bi-geo-alt icon-large mb-3"></i>
+          <h5 class="info-title">Faça uma Visita</h5>
+          <div class="info-content">
+            <p class="mb-1">Kilamba Kiaxi</p>
+            <p class="mb-0">Luanda, Angola</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

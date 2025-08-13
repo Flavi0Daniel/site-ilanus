@@ -1,97 +1,111 @@
-<section class="sobre" aria-labelledby="sobre-title" role="region">
+<!-- Intro Section -->
+<section class="intro-section">
   <div class="container">
-    <h2 id="sobre-title" class="title">Sobre Nós</h2>
-    <div class="sobre-grid">
-
-      <!-- Card: Quem Somos -->
-      <div class="card-sobre animar">
-        <div class="card-icon bg-blue">
-          <i class="bi bi-people-fill"></i>
-        </div>
-        <div>
-          <h3>Quem Somos</h3>
-          <p>
-            A Ilanus é especialista em estágios e treinamentos profissionais, promovendo o desenvolvimento das competências e impulsionando a produtividade de organizações e indivíduos.
+    <div class="row align-items-center min-vh-100">
+      <div class="col-lg-6">
+        <div class="intro-content">
+          <h1 class="intro-title">Ilanus Escola Online de Consultoria de Negócios</h1>
+          <p class="intro-description">
+            {{ companyInfo.description }}
           </p>
+          <div class="company-vision mt-4">
+            <h3>Nossa Visão</h3>
+            <p>{{ companyInfo.vision }}</p>
+          </div>
+          <div class="company-mission mt-4">
+            <h3>Nossa Missão</h3>
+            <p>{{ companyInfo.mission }}</p>
+          </div>
         </div>
-      </div> 
+      </div>
+      <div class="col-lg-6">
+        <div class="intro-image">
+          <img src="../../../assets/business-man.jpg" alt="Profissional de Negócios Ilanus" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Card: Visão -->
-      <div class="card-sobre animar">
-        <div class="card-icon bg-cyan">
-          <i class="bi bi-eye-fill"></i>
-        </div>
-        <div>
-          <h3>Visão</h3>
-          <p>
-            Ser reconhecida como a empresa mais qualificada em estágios e formação profissional em Angola.
+<!-- Mission Stats Section -->
+<section class="mission-stats-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="mission-content">
+          <h2 class="section-title">Nossa missão é capacitar</h2>
+          <p class="mission-description">
+            Empoderar indivíduos e organizações através do desenvolvimento de competências transmitidas pelas formações e programas de estágios. 
+            Oferecemos a melhor experiência para organizações e indivíduos motivados em desenvolver competências profissionais e aumentar sua produtividade.
           </p>
+          <div class="differentials-info mt-4">
+            <h4>Nossos Diferenciais</h4>
+            <p><strong>{{ companyInfo.differentials }}</strong></p>
+          </div>
         </div>
       </div>
-
-      <!-- Card: Missão -->
-      <div class="card-sobre animar">
-        <div class="card-icon bg-green">
-          <i class="bi bi-bullseye"></i>
-        </div>
-        <div>
-          <h3>Missão</h3>
-          <p>
-            Empoderar pessoas e organizações, promovendo desenvolvimento por meio de estágios e formações de excelência.
-          </p>
-        </div>
-      </div>
-
-      <!-- Card: Valores -->
-      <div class="card-sobre animar">
-        <div class="card-icon bg-purple">
-          <i class="bi bi-gem"></i>
-        </div>
-        <div>
-          <h3>Valores</h3>
-          <ul>
-            <li><i class="bi bi-check-circle"></i> Integridade</li>
-            <li><i class="bi bi-check-circle"></i> Excelência</li>
-            <li><i class="bi bi-check-circle"></i> Inovação</li>
-            <li><i class="bi bi-check-circle"></i> Desenvolvimento</li>
-            <li><i class="bi bi-check-circle"></i> Colaboração</li>
-          </ul>
+      <div class="col-lg-6">
+        <div class="stats-container">
+          <div class="row">
+            <div class="col-6" *ngFor="let stat of companyStats">
+              <div class="stat-item">
+                <div class="stat-number" 
+                     [attr.data-target]="stat.number" 
+                     #statElement>{{ getAnimatedNumber(stat.number) }}</div>
+                <div class="stat-label">{{ stat.label }}</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="mission-bg-overlay"></div>
+</section>
 
-      <!-- Card: Diferenciais -->
-      <div class="card-sobre animar">
-        <div class="card-icon bg-orange">
-          <i class="bi bi-lightbulb-fill"></i>
-        </div>
-        <div>
-          <h3>Diferenciais</h3>
-          <p>
-            <strong>Career Lab & Ilanus Lab</strong><br>
-            Visão, Foco, Assertividade, Inovação, Eficiência, Valor Acrescentado, Dinamismo, Qualidade, Paixão pelo trabalho.
-          </p>
+<!-- Values Section -->
+<section class="values-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Principais valores</h2>
+      <p class="section-subtitle">Praticamos o que falamos</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-2 col-md-4 col-sm-6 mb-4" *ngFor="let value of companyValues; trackBy: trackByValueTitle">
+        <div class="value-card" 
+             (mouseenter)="onValueCardHover(value)" 
+             (mouseleave)="onValueCardLeave(value)">
+          <div class="value-icon">
+            <i [class]="value.icon"></i>
+          </div>
+          <h5 class="value-title">{{ value.title }}</h5>
+          <p class="value-description">{{ value.description }}</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Card: Por quê trabalhar com a ILANUS? -->
-      <div class="card-sobre animar">
-        <div class="card-icon bg-pink">
-          <i class="bi bi-chat-quote-fill"></i>
-        </div>
-        <div>
-          <h3>Por que escolher a ILANUS?</h3>
-          <ul>
-            <li>Paixão pelo trabalho</li>
-            <li>Qualidade nos produtos</li>
-            <li>Conhecimento do mercado</li>
-            <li>Portfólio de excelência</li>
-            <li>Experiência (Know-How)</li>
-            <li>Gestão eficiente do tempo e informação</li>
-            <li>Soluções personalizadas</li>
-          </ul>
+<!-- Company Definition Section -->
+<section class="company-definition-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-center">
+        <div class="definition-content">
+          <h2 class="section-title mb-4">O que nos define?</h2>
+          <div class="defining-qualities">
+            <span class="quality-tag" *ngFor="let quality of definingQualities; trackBy: trackByQuality">
+              {{ quality }}
+            </span>
+          </div>
+          <div class="company-summary mt-5">
+            <p class="summary-text">
+              A Ilanus combina experiência, inovação e paixão pelo desenvolvimento profissional para oferecer 
+              soluções de estágios e treinamentos que transformam carreiras e impulsionam organizações em Angola.
+            </p>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
