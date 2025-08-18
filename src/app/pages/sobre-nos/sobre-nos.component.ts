@@ -87,10 +87,10 @@ export class SobreNosComponent implements OnInit, OnDestroy, AfterViewInit {
   ];
 
   companyInfo: CompanyInfo = {
-    description: 'Ilanus é uma empresa especialista em programas de estágios e treinamentos profissionais. Oferecemos a melhor experiência para organizações e indivíduos motivados em desenvolver competências profissionais e aumentar sua produtividade.',
+    description: 'Prokcel é uma empresa especialista em programas de estágios e treinamentos profissionais. Oferecemos a melhor experiência para organizações e indivíduos motivados em desenvolver competências profissionais e aumentar sua produtividade.',
     vision: 'Ser reconhecida como a empresa mais qualificada na área de estágios e formação profissional em Angola.',
     mission: 'Empoderar indivíduos e organizações através do desenvolvimento de competências transmitidas pelas formações e programas de estágios.',
-    differentials: 'Career Lab & Ilanus Lab'
+    differentials: 'Career Lab & Prokcel Lab'
   };
 
   definingQualities: string[] = [

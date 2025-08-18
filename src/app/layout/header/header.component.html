@@ -8,22 +8,27 @@
     <!-- Brand -->
     <a class="navbar-brand" routerLink="/" (click)="closeMenu()">
       <div class="brand-container">
-        <span class="brand-name">Ilanus</span>
+        <span class="brand-name">Prokcel</span>
         <small class="brand-subtitle">FORMAÇÃO & ESTÁGIOS PROFISSIONAL</small>
       </div>
     </a>
 
-    <!-- Mobile menu toggle -->
+    <!-- Mobile menu toggle - CORRIGIDO -->
     <button class="navbar-toggler custom-toggler" 
             type="button" 
-            (click)="toggleMenu()"
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
             [attr.aria-expanded]="isMenuOpen"
-            aria-label="Toggle navigation">
+            aria-label="Toggle navigation"
+            (click)="toggleMenu()">
       <i class="bi" [ngClass]="isMenuOpen ? 'bi-x-lg' : 'bi-list'"></i>
     </button>
 
-    <!-- Navigation Menu -->
-    <div class="navbar-collapse" [ngClass]="{'show': isMenuOpen}">
+    <!-- Navigation Menu - CORRIGIDO -->
+    <div class="collapse navbar-collapse" 
+         id="navbarNav"
+         [ngClass]="{'show': isMenuOpen}">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" 
