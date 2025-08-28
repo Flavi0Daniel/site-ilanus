@@ -1,0 +1,526 @@
+<!-- Seção Principal - Hero -->
+<section class="intro-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Imagem à esquerda -->
+      <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+        <div class="intro-image">
+          <img src="assets/estagio-profissional.jpg" alt="Estágio Profissional Prokcel" class="img-fluid rounded shadow">
+        </div>
+      </div>
+      
+      <!-- Conteúdo à direita -->
+      <div class="col-lg-6 col-md-12">
+        <div class="intro-content">
+          <h1 class="display-4 fw-bold text-primary mb-3">
+            Serviços de Estágio Profissional
+          </h1>
+          <p class="lead mb-4">
+            Desenvolva suas competências profissionais com os nossos programas de estágio especializados. 
+            Oferecemos formação prática e certificação reconhecida no mercado.
+          </p>
+          
+          <!-- Áreas de Estágio -->
+          <div class="areas-estagio">
+            <h3 class="h4 mb-3 text-secondary">
+              <i class="bi bi-mortarboard me-2"></i>Áreas Disponíveis
+            </h3>
+            <div class="row g-3">
+              <div class="col-6 col-sm-4" *ngFor="let estagio of estagiosDisponiveis">
+                <div class="area-card text-center p-3 bg-light rounded">
+                  <i class="bi bi-check-circle-fill text-success mb-2"></i>
+                  <small class="fw-semibold">{{ estagio }}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção de Vantagens -->
+<section class="vantagens-section py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="display-5 fw-bold text-primary">
+          <i class="bi bi-star-fill me-2"></i>Vantagens
+        </h2>
+        <p class="lead text-muted">
+          Conheça os benefícios exclusivos dos nossos programas de estágio
+        </p>
+      </div>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" *ngFor="let vantagem of vantagens">
+        <div class="vantagem-card h-100 bg-white rounded shadow-sm p-4 text-center">
+          <div class="vantagem-icon mb-3">
+            <i class="{{ vantagem.icon }} display-4 text-primary"></i>
+          </div>
+          <h5 class="fw-bold mb-3">{{ vantagem.titulo }}</h5>
+          <p class="text-muted">{{ vantagem.descricao }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção de Informações Relevantes -->
+<section class="info-section py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-4">
+        <h3 class="h2 fw-bold text-primary">
+          <i class="bi bi-info-circle-fill me-2"></i>Informações Relevantes
+        </h3>
+      </div>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="info-card bg-primary text-white rounded p-4">
+          <h5 class="fw-bold mb-3">
+            <i class="bi bi-lightning-charge-fill me-2"></i>Formações Intensivas
+          </h5>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><i class="bi bi-check2 me-2"></i>Formações práticas e intensivas</li>
+            <li class="mb-2"><i class="bi bi-check2 me-2"></i>Ambiente empresarial real</li>
+            <li class="mb-2"><i class="bi bi-check2 me-2"></i>Professores capacitados</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="info-card bg-secondary text-white rounded p-4">
+          <h5 class="fw-bold mb-3">
+            <i class="bi bi-calendar-week-fill me-2"></i>Horários Flexíveis
+          </h5>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><i class="bi bi-check2 me-2"></i>Dias úteis: Segunda à Sexta</li>
+            <li class="mb-2"><i class="bi bi-check2 me-2"></i>Períodos: Manhã, Tarde e Noite</li>
+            <li class="mb-2"><i class="bi bi-check2 me-2"></i>Horários personalizados disponíveis</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col-lg-12">
+        <div class="info-card bg-success text-white rounded p-4 text-center">
+          <h5 class="fw-bold mb-3">
+            <i class="bi bi-percent me-2"></i>Desconto Especial
+          </h5>
+          <p class="mb-0 fs-5">
+            <strong>5% de desconto</strong> para estagiários que optarem por trabalhar com computadores próprios
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção de Inscrição -->
+<section class="inscricao-section py-5 bg-primary text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="display-5 fw-bold">
+          <i class="bi bi-pencil-square me-2"></i>Inscreva-se Agora
+        </h2>
+        <p class="lead">
+          Escolha a modalidade de inscrição que melhor se adequa às suas necessidades
+        </p>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center g-4">
+      <div class="col-lg-5 col-md-6">
+        <div class="inscricao-card bg-white text-dark rounded shadow p-4 text-center h-100">
+          <div class="inscricao-icon mb-3">
+            <i class="bi bi-person-fill display-1 text-primary"></i>
+          </div>
+          <h4 class="fw-bold mb-3">Inscrição Particular</h4>
+          <p class="text-muted mb-4">
+            Ideal para estudantes e profissionais que desejam desenvolver suas competências individualmente
+          </p>
+          <button 
+            class="btn btn-primary btn-lg w-100"
+            (click)="abrirModalParticular()">
+            <i class="bi bi-person-plus me-2"></i>Inscrever como Particular
+          </button>
+        </div>
+      </div>
+      
+      <div class="col-lg-5 col-md-6">
+        <div class="inscricao-card bg-white text-dark rounded shadow p-4 text-center h-100">
+          <div class="inscricao-icon mb-3">
+            <i class="bi bi-building-fill display-1 text-success"></i>
+          </div>
+          <h4 class="fw-bold mb-3">Inscrição Empresarial</h4>
+          <p class="text-muted mb-4">
+            Perfeito para empresas que desejam capacitar seus colaboradores com formação especializada
+          </p>
+          <button 
+            class="btn btn-success btn-lg w-100"
+            (click)="abrirModalEmpresa()">
+            <i class="bi bi-building-add me-2"></i>Inscrever como Empresa
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal Particular -->
+<div class="modal fade" id="modalParticular" tabindex="-1" aria-labelledby="modalParticularLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title fw-bold" id="modalParticularLabel">
+          <i class="bi bi-person-plus me-2"></i>Inscrição Particular
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      
+      <div class="modal-body">
+        <form [formGroup]="formParticular" novalidate>
+          <div class="row g-3">
+            <!-- Nome Completo -->
+            <div class="col-12">
+              <label for="nomeCompleto" class="form-label fw-semibold">
+                Nome Completo <span class="text-danger">*</span>
+              </label>
+              <input 
+                type="text" 
+                class="form-control"
+                [class.is-invalid]="isCampoInvalido(formParticular, 'nomeCompleto')"
+                id="nomeCompleto" 
+                formControlName="nomeCompleto"
+                placeholder="Digite seu nome completo">
+              <div class="invalid-feedback">
+                {{ getMensagemErro(formParticular, 'nomeCompleto') }}
+              </div>
+            </div>
+            
+            <!-- Email -->
+            <div class="col-md-6">
+              <label for="email" class="form-label fw-semibold">
+                Email <span class="text-danger">*</span>
+              </label>
+              <input 
+                type="email" 
+                class="form-control"
+                [class.is-invalid]="isCampoInvalido(formParticular, 'email')"
+                id="email" 
+                formControlName="email"
+                placeholder="seuemail@exemplo.com">
+              <div class="invalid-feedback">
+                {{ getMensagemErro(formParticular, 'email') }}
+              </div>
+            </div>
+            
+            <!-- Telefone -->
+            <div class="col-md-6">
+              <label for="telefone" class="form-label fw-semibold">
+                Telefone <span class="text-danger">*</span>
+              </label>
+              <input 
+                type="tel" 
+                class="form-control"
+                [class.is-invalid]="isCampoInvalido(formParticular, 'telefone')"
+                id="telefone" 
+                formControlName="telefone"
+                placeholder="+244 999 000 000">
+              <div class="invalid-feedback">
+                {{ getMensagemErro(formParticular, 'telefone') }}
+              </div>
+            </div>
+            
+            <!-- WhatsApp -->
+            <div class="col-md-6">
+              <label for="whatsapp" class="form-label fw-semibold">
+                WhatsApp <span class="text-danger">*</span>
+              </label>
+              <input 
+                type="tel" 
+                class="form-control"
+                [class.is-invalid]="isCampoInvalido(formParticular, 'whatsapp')"
+                id="whatsapp" 
+                formControlName="whatsapp"
+                placeholder="+244 999 000 000">
+              <div class="invalid-feedback">
+                {{ getMensagemErro(formParticular, 'whatsapp') }}
+              </div>
+            </div>
+            
+            <!-- Estágio -->
+            <div class="col-md-6">
+              <label for="estagio" class="form-label fw-semibold">
+                Estágio Desejado <span class="text-danger">*</span>
+              </label>
+              <select 
+                class="form-select"
+                [class.is-invalid]="isCampoInvalido(formParticular, 'estagio')"
+                id="estagio" 
+                formControlName="estagio">
+                <option value="">Selecione um estágio</option>
+                <option [value]="estagio" *ngFor="let estagio of estagiosDisponiveis">
+                  {{ estagio }}
+                </option>
+              </select>
+              <div class="invalid-feedback">
+                {{ getMensagemErro(formParticular, 'estagio') }}
+              </div>
+            </div>
+            
+            <!-- Mensagem -->
+            <div class="col-12">
+              <label for="mensagem" class="form-label fw-semibold">Mensagem (Opcional)</label>
+              <textarea 
+                class="form-control" 
+                id="mensagem" 
+                rows="3"
+                formControlName="mensagem"
+                placeholder="Conte-nos mais sobre seus objetivos ou dúvidas..."></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="modal-footer justify-content-center">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center w-100">
+          <button 
+            type="button" 
+            class="btn btn-success flex-fill"
+            [disabled]="isLoadingWhatsApp"
+            (click)="enviarWhatsAppParticular()">
+            <span *ngIf="!isLoadingWhatsApp">
+              <i class="bi bi-whatsapp me-2"></i>Enviar por WhatsApp
+            </span>
+            <span *ngIf="isLoadingWhatsApp">
+              <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+              Enviando...
+            </span>
+          </button>
+          
+          <button 
+            type="button" 
+            class="btn btn-primary flex-fill"
+            [disabled]="isLoadingEmail"
+            (click)="enviarEmailParticular()">
+            <span *ngIf="!isLoadingEmail">
+              <i class="bi bi-envelope-fill me-2"></i>Enviar por Email
+            </span>
+            <span *ngIf="isLoadingEmail">
+              <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+              Enviando...
+            </span>
+          </button>
+          
+          <button 
+            type="button" 
+            class="btn btn-warning flex-fill"
+            [disabled]="isLoadingWhatsApp || isLoadingEmail"
+            (click)="enviarAmbosParticular()">
+            <i class="bi bi-send-fill me-2"></i>Enviar para Ambos
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Empresa -->
+<div class="modal fade" id="modalEmpresa" tabindex="-1" aria-labelledby="modalEmpresaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title fw-bold" id="modalEmpresaLabel">
+          <i class="bi bi-building-add me-2"></i>Inscrição Empresarial
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      
+      <div class="modal-body">
+        <form [formGroup]="formEmpresa" novalidate>
+          <div class="row g-3">
+            <!-- Nome da Empresa -->
+            <div class="col-md-6">
+              <label for="nomeEmpresa" class="form-label fw-semibold">
+                Nome da Empresa <span class="text-danger">*</span>
+              </label>
+              <input 
+                type="text" 
+                class="form-control"
+                [class.is-invalid]="isCampoInvalido(formEmpresa, 'nomeEmpresa')"
+                id="nomeEmpresa" 
+                formControlName="nomeEmpresa"
+                placeholder="Nome da sua empresa">
+              <div class="invalid-feedback">
+                {{ getMensagemErro(formEmpresa, 'nomeEmpresa') }}
+              </div>
+            </div>
+            
+            <!-- Número de Formandos -->
+            <div class="col-md-6">
+              <label for="numeroFormandos" class="form-label fw-semibold">
+                Número de Formandos <span class="text-danger">*</span>
+              </label>
+              <input 
+                type="number" 
+                class="form-control"
+                [class.is-invalid]="isCampoInvalido(formEmpresa, 'numeroFormandos')"
+                id="numeroFormandos" 
+                formControlName="numeroFormandos"
+                placeholder="Quantos colaboradores"
+                min="1">
+              <div class="invalid-feedback">
+                {{ getMensagemErro(formEmpresa, 'numeroFormandos') }}
+              </div>
+            </div>
+            
+            <!-- Seu Nome -->
+            <div class="col-12">
+              <label for="seuNome" class="form-label fw-semibold">
+                Seu Nome (Responsável) <span class="text-danger">*</span>
+              </label>
+              <input 
+                type="text" 
+                class="form-control"
+                [class.is-invalid]="isCampoInvalido(formEmpresa, 'seuNome')"
+                id="seuNome" 
+                formControlName="seuNome"
+                placeholder="Nome do responsável pela inscrição">
+              <div class="invalid-feedback">
+                {{ getMensagemErro(formEmpresa, 'seuNome') }}
+              </div>
+            </div>
+            
+            <!-- Email -->
+            <div class="col-md-6">
+              <label for="emailEmpresa" class="form-label fw-semibold">
+                Email <span class="text-danger">*</span>
+              </label>
+              <input 
+                type="email" 
+                class="form-control"
+                [class.is-invalid]="isCampoInvalido(formEmpresa, 'email')"
+                id="emailEmpresa" 
+                formControlName="email"
+                placeholder="email@empresa.com">
+              <div class="invalid-feedback">
+                {{ getMensagemErro(formEmpresa, 'email') }}
+              </div>
+            </div>
+            
+            <!-- Telefone -->
+            <div class="col-md-6">
+              <label for="telefoneEmpresa" class="form-label fw-semibold">
+                Telefone <span class="text-danger">*</span>
+              </label>
+              <input 
+                type="tel" 
+                class="form-control"
+                [class.is-invalid]="isCampoInvalido(formEmpresa, 'telefone')"
+                id="telefoneEmpresa" 
+                formControlName="telefone"
+                placeholder="+244 999 000 000">
+              <div class="invalid-feedback">
+                {{ getMensagemErro(formEmpresa, 'telefone') }}
+              </div>
+            </div>
+            
+            <!-- WhatsApp -->
+            <div class="col-md-6">
+              <label for="whatsappEmpresa" class="form-label fw-semibold">
+                WhatsApp <span class="text-danger">*</span>
+              </label>
+              <input 
+                type="tel" 
+                class="form-control"
+                [class.is-invalid]="isCampoInvalido(formEmpresa, 'whatsapp')"
+                id="whatsappEmpresa" 
+                formControlName="whatsapp"
+                placeholder="+244 999 000 000">
+              <div class="invalid-feedback">
+                {{ getMensagemErro(formEmpresa, 'whatsapp') }}
+              </div>
+            </div>
+            
+            <!-- Estágio -->
+            <div class="col-md-6">
+              <label for="estagioEmpresa" class="form-label fw-semibold">
+                Estágio Desejado <span class="text-danger">*</span>
+              </label>
+              <select 
+                class="form-select"
+                [class.is-invalid]="isCampoInvalido(formEmpresa, 'estagio')"
+                id="estagioEmpresa" 
+                formControlName="estagio">
+                <option value="">Selecione um estágio</option>
+                <option [value]="estagio" *ngFor="let estagio of estagiosDisponiveis">
+                  {{ estagio }}
+                </option>
+              </select>
+              <div class="invalid-feedback">
+                {{ getMensagemErro(formEmpresa, 'estagio') }}
+              </div>
+            </div>
+            
+            <!-- Mensagem -->
+            <div class="col-12">
+              <label for="mensagemEmpresa" class="form-label fw-semibold">Mensagem (Opcional)</label>
+              <textarea 
+                class="form-control" 
+                id="mensagemEmpresa" 
+                rows="3"
+                formControlName="mensagem"
+                placeholder="Conte-nos mais sobre as necessidades da empresa..."></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="modal-footer justify-content-center">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center w-100">
+          <button 
+            type="button" 
+            class="btn btn-success flex-fill"
+            [disabled]="isLoadingWhatsApp"
+            (click)="enviarWhatsAppEmpresa()">
+            <span *ngIf="!isLoadingWhatsApp">
+              <i class="bi bi-whatsapp me-2"></i>Enviar por WhatsApp
+            </span>
+            <span *ngIf="isLoadingWhatsApp">
+              <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+              Enviando...
+            </span>
+          </button>
+          
+          <button 
+            type="button" 
+            class="btn btn-primary flex-fill"
+            [disabled]="isLoadingEmail"
+            (click)="enviarEmailEmpresa()">
+            <span *ngIf="!isLoadingEmail">
+              <i class="bi bi-envelope-fill me-2"></i>Enviar por Email
+            </span>
+            <span *ngIf="isLoadingEmail">
+              <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+              Enviando...
+            </span>
+          </button>
+          
+          <button 
+            type="button" 
+            class="btn btn-warning flex-fill"
+            [disabled]="isLoadingWhatsApp || isLoadingEmail"
+            (click)="enviarAmbosEmpresa()">
+            <i class="bi bi-send-fill me-2"></i>Enviar para Ambos
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

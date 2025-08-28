@@ -65,29 +65,29 @@ export class SobreNosComponent implements OnInit, OnDestroy, AfterViewInit {
 
   companyStats: CompanyStat[] = [
     {
-      number: '24',
-      label: 'Módulos profissionais online',
-      targetValue: 24
+      number: '+15',
+      label: 'Empresas parceiras em variados sectores',
+      targetValue: 15
     },
     {
-      number: '16',
-      label: 'Mentores líderes do setor',
-      targetValue: 16
+      number: '+80',
+      label: 'Áreas de estágios e formação profissional',
+      targetValue: 80
     },
     {
-      number: '4.000',
-      label: 'Graduados qualificados',
-      targetValue: 4000
+      number: '+7',
+      label: 'Anos de experiência',
+      targetValue: 7
     },
     {
-      number: '99%',
-      label: 'De satisfação pelos estudantes',
-      targetValue: 99
+      number: '85%',
+      label: 'De satisfação dos clientes',
+      targetValue: 85
     }
   ];
 
   companyInfo: CompanyInfo = {
-    description: 'Prokcel é uma empresa especialista em programas de estágios e treinamentos profissionais. Oferecemos a melhor experiência para organizações e indivíduos motivados em desenvolver competências profissionais e aumentar sua produtividade.',
+    description: 'Prokcel é uma empresa especialista em programas de estágios e treinamentos profissionais. Oferecemos a melhor experiência para organizações e indivíduos motivados em desenvolver competências profissionais e aumentar sua produtividade, combinamos experiência, inovação e paixão pelo desenvolvimento profissional para oferecer soluções que transformam carreiras e impulsionam organizações.',
     vision: 'Ser reconhecida como a empresa mais qualificada na área de estágios e formação profissional em Angola.',
     mission: 'Empoderar indivíduos e organizações através do desenvolvimento de competências transmitidas pelas formações e programas de estágios.',
     differentials: 'Career Lab & Prokcel Lab'
@@ -201,11 +201,15 @@ export class SobreNosComponent implements OnInit, OnDestroy, AfterViewInit {
   getAnimatedNumber(statNumber: string): string {
     const animatedValue = this.animatedNumbers[statNumber];
     
-    if (statNumber === '99%') {
+    if (statNumber === '85%') {
       return animatedValue + '%';
     } else if (statNumber === '4.000') {
       return animatedValue >= 1000 ? (animatedValue / 1000).toFixed(1) + 'K' : animatedValue.toString();
-    } else {
+    } 
+    else if (statNumber === '+7') {
+      return '+' + animatedValue;
+    }
+    else {
       return animatedValue.toString();
     }
   }

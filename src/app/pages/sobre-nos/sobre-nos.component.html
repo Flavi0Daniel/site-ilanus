@@ -4,18 +4,15 @@
     <div class="row align-items-center min-vh-100">
       <div class="col-lg-6">
         <div class="intro-content">
-          <h1 class="intro-title">Prokcel </h1>
+          <h1 class="intro-title">Sobre Nós </h1>
           <p class="intro-description">
             {{ companyInfo.description }}
           </p>
           <div class="company-vision mt-4">
-            <h3>Nossa Visão</h3>
+            <h2>Nossa Visão</h2>
             <p>{{ companyInfo.vision }}</p>
           </div>
-          <div class="company-mission mt-4">
-            <h3>Nossa Missão</h3>
-            <p>{{ companyInfo.mission }}</p>
-          </div>
+          
         </div>
       </div>
       <div class="col-lg-6">
@@ -36,10 +33,9 @@
           <h2 class="section-title">Nossa missão é capacitar</h2>
           <p class="mission-description">
             Empoderar indivíduos e organizações através do desenvolvimento de competências transmitidas pelas formações e programas de estágios. 
-            Oferecemos a melhor experiência para organizações e indivíduos motivados em desenvolver competências profissionais e aumentar sua produtividade.
           </p>
           <div class="differentials-info mt-4">
-            <h4>Nossos Diferenciais</h4>
+            <h2>Nosso Diferencial</h2>
             <p><strong>{{ companyInfo.differentials }}</strong></p>
           </div>
         </div>
@@ -97,12 +93,6 @@
             <span class="quality-tag" *ngFor="let quality of definingQualities; trackBy: trackByQuality">
               {{ quality }}
             </span>
-          </div>
-          <div class="company-summary mt-5">
-            <p class="summary-text">
-              A Prokcel combina experiência, inovação e paixão pelo desenvolvimento profissional para oferecer 
-              soluções de estágios e treinamentos que transformam carreiras e impulsionam organizações em Angola.
-            </p>
           </div>
         </div>
       </div>

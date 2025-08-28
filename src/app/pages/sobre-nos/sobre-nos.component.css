@@ -38,10 +38,10 @@
   opacity: 0.95;
 }
 
-.company-vision h3,
-.company-mission h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
+.company-vision h2,
+.company-mission h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
   margin-bottom: 0.8rem;
   color: #f0f9ff;
 }
@@ -117,16 +117,21 @@
   opacity: 0.9;
 }
 
-.differentials-info h4 {
-  font-size: 1.3rem;
-  font-weight: 600;
+.differentials-info h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
   margin-bottom: 1rem;
-  color: #e2e8f0;
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  color: #8b5cf6;
 }
 
 .differentials-info p {
   font-size: 1.1rem;
-  color: #8b5cf6;
+  color: #e2e8f0;
   margin: 0;
 }
 

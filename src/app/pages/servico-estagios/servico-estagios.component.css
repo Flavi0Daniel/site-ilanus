@@ -1,0 +1,393 @@
+/* ===== ESTILOS GERAIS ===== */
+.intro-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  margin-top: 30px;
+}
+
+.intro-image img {
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.intro-image img:hover {
+  transform: scale(1.02);
+}
+
+.intro-content h1 {
+  color: #0d6efd;
+  line-height: 1.2;
+}
+
+.intro-content .lead {
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+/* ===== ÁREAS DE ESTÁGIO ===== */
+.areas-estagio .area-card {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.areas-estagio .area-card:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.areas-estagio .area-card i {
+  font-size: 1.2rem;
+}
+
+.areas-estagio .area-card small {
+  font-size: 0.85rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* ===== SEÇÃO DE VANTAGENS ===== */
+.vantagens-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.vantagem-card {
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+.vantagem-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #0d6efd, #6f42c1);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.vantagem-card:hover::before {
+  transform: scaleX(1);
+}
+
+.vantagem-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.vantagem-icon i {
+  transition: all 0.3s ease;
+}
+
+.vantagem-card:hover .vantagem-icon i {
+  transform: scale(1.1);
+}
+
+/* ===== SEÇÃO DE INFORMAÇÕES ===== */
+.info-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.info-card {
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.info-card ul li {
+  transition: all 0.2s ease;
+}
+
+.info-card:hover ul li {
+  transform: translateX(5px);
+}
+
+/* ===== SEÇÃO DE INSCRIÇÃO ===== */
+.inscricao-section {
+  background: linear-gradient(135deg, #0d6efd 0%, #6f42c1 100%);
+}
+
+.inscricao-card {
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.inscricao-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.inscricao-card:hover::before {
+  left: 100%;
+}
+
+.inscricao-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.inscricao-icon i {
+  transition: all 0.3s ease;
+}
+
+.inscricao-card:hover .inscricao-icon i {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.inscricao-card .btn {
+  transition: all 0.3s ease;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.inscricao-card .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== MODALS ===== */
+.modal-content {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  border-bottom: none;
+  padding: 1.5rem 2rem;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-footer {
+  border-top: 1px solid #e9ecef;
+  padding: 1.5rem 2rem;
+  background: #f8f9fa;
+}
+
+/* Formulários */
+.form-label {
+  color: #495057;
+  font-size: 0.95rem;
+}
+
+.form-control, .form-select {
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+  transform: translateY(-1px);
+}
+
+.form-control.is-invalid, .form-select.is-invalid {
+  border-color: #dc3545;
+  animation: shake 0.3s ease-in-out;
+}
+
+.invalid-feedback {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Botões dos modals */
+.modal-footer .btn {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-footer .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.modal-footer .btn:hover::before {
+  left: 100%;
+}
+
+.modal-footer .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-footer .btn:disabled {
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content, .vantagem-card, .info-card, .inscricao-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .areas-estagio .area-card {
+    min-height: 70px;
+  }
+  
+  .areas-estagio .area-card small {
+    font-size: 0.8rem;
+  }
+  
+  .vantagem-card, .info-card, .inscricao-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .modal-dialog {
+    margin: 1rem;
+  }
+  
+  .modal-body, .modal-footer {
+    padding: 1.5rem;
+  }
+  
+  .modal-footer .d-md-flex {
+    flex-direction: column !important;
+  }
+  
+  .modal-footer .btn {
+    margin-bottom: 0.5rem;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .areas-estagio .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .areas-estagio .area-card {
+    min-height: 60px;
+    padding: 0.75rem !important;
+  }
+  
+  .areas-estagio .area-card small {
+    font-size: 0.75rem;
+  }
+  
+  .vantagem-card {
+    padding: 1.5rem !important;
+  }
+  
+  .info-card {
+    padding: 1.5rem !important;
+  }
+  
+  .inscricao-card {
+    padding: 1.5rem !important;
+  }
+}
+
+/* ===== LOADING STATES ===== */
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .modal, .btn {
+    display: none !important;
+  }
+  
+  .hero-section, .vantagens-section, .info-section {
+    break-inside: avoid;
+  }
+}

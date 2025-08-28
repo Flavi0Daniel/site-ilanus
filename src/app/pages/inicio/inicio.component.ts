@@ -79,4 +79,19 @@ export class InicioComponent implements OnInit, OnDestroy {
   navigateToServices(): void {
     this.router.navigate(['/servicos']);
   }
+
+  /**
+   * Navega para a página de serviços de formaçao
+   */
+  navigateToServiceFormation(): void {
+    this.router.navigate(['/servico-formacao']);
+  }
+
+  /**
+   * Navega para a página de serviços de estagios
+   */
+  navigateToServiceEstagio(): void {
+    this.router.navigate(['/servico-estagios']);
+  }
+
 }
