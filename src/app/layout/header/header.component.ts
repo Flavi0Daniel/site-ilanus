@@ -10,11 +10,11 @@ declare var bootstrap: any;
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
   isMenuOpen = false;
   isScrolled = false;
   isHomePage = false;
-
+  isDropdownOpen = false;
+  
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
     ).subscribe((event: NavigationEnd) => {
       this.isHomePage = event.url === '/' || event.url === '';
     });
-
+    
     // Verificar página inicial no carregamento
     this.isHomePage = this.router.url === '/' || this.router.url === '';
   }
@@ -39,18 +39,24 @@ export class HeaderComponent implements OnInit {
     const target = event.target as HTMLElement;
     const navbar = document.getElementById('navbarNav');
     const toggler = document.querySelector('.navbar-toggler');
-    
+    const dropdown = target.closest('.dropdown');
+   
     // Fechar menu se clicar fora dele
     if (navbar && toggler && this.isMenuOpen) {
       if (!navbar.contains(target) && !toggler.contains(target)) {
         this.closeMenu();
       }
     }
+
+    // Fechar dropdown se clicar fora dele
+    if (!dropdown && this.isDropdownOpen) {
+      this.hideDropdown();
+    }
   }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
-    
+   
     // Forçar o Bootstrap a reconhecer o estado
     const navbarCollapse = document.getElementById('navbarNav');
     if (navbarCollapse) {
@@ -64,7 +70,8 @@ export class HeaderComponent implements OnInit {
 
   closeMenu() {
     this.isMenuOpen = false;
-    
+    this.isDropdownOpen = false;
+   
     // Garantir que o Bootstrap remova a classe 'show'
     const navbarCollapse = document.getElementById('navbarNav');
     if (navbarCollapse) {
@@ -75,5 +82,48 @@ export class HeaderComponent implements OnInit {
   navigateAndClose(route: string) {
     this.router.navigate([route]);
     this.closeMenu();
+  }
+
+  // Métodos para controlar o dropdown
+  private hideTimeout: any;
+
+  showDropdown() {
+    // Só mostrar dropdown no desktop
+    if (window.innerWidth > 991) {
+      // Cancelar qualquer timeout de esconder pendente
+      if (this.hideTimeout) {
+        clearTimeout(this.hideTimeout);
+        this.hideTimeout = null;
+      }
+      this.isDropdownOpen = true;
+    }
+  }
+
+  hideDropdown() {
+    // Só esconder dropdown no desktop se não estiver no mobile
+    if (window.innerWidth > 991) {
+      // Delay para permitir movimento do mouse para o submenu
+      this.hideTimeout = setTimeout(() => {
+        this.isDropdownOpen = false;
+      }, 200);
+    }
+  }
+
+  toggleDropdown(event: Event) {
+    event.preventDefault();
+    
+    // No mobile, toggle o dropdown
+    if (window.innerWidth <= 991) {
+      this.isDropdownOpen = !this.isDropdownOpen;
+    } else {
+      // No desktop, mostrar dropdown
+      this.isDropdownOpen = true;
+    }
+  }
+
+  // Verificar se alguma rota de serviços está ativa
+  isServicosActive(): boolean {
+    const currentRoute = this.router.url;
+    return currentRoute.includes('/servico-estagios') || currentRoute.includes('/servico-formacao');
   }
 }

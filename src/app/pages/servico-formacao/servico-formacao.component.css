@@ -1,0 +1,437 @@
+/* ==================== ESTILOS GERAIS ==================== */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 0;
+  margin-bottom: 0;
+}
+
+.hero-section .display-4 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-section .lead {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+/* ==================== CARDS DAS ÁREAS ==================== */
+.areas-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.area-card {
+  transition: all 0.3s ease;
+  border: none;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.area-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+}
+
+.card-img-container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.area-card:hover .card-img-container img {
+  transform: scale(1.1);
+}
+
+.card-img-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 70%, transparent 100%);
+  padding: 1.5rem;
+}
+
+.card-img-overlay .card-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.card-img-overlay .card-text {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.area-card .card-body {
+  padding: 1.5rem;
+  min-height: 160px;
+}
+
+.area-card .btn-primary {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+  padding: 12px 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.area-card .btn-primary:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-2px);
+}
+
+/* ==================== SEÇÃO DE VANTAGENS ==================== */
+.vantagens-section {
+  padding: 80px 0;
+}
+
+.vantagem-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.vantagem-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.vantagem-icon i {
+  font-size: 3rem;
+  opacity: 0.9;
+}
+
+.vantagem-card h5 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.vantagem-card p {
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ==================== SEÇÃO DE INFORMAÇÕES ==================== */
+.info-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.info-card {
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.info-card i {
+  opacity: 0.9;
+}
+
+.info-card ul li {
+  padding: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.desconto-card {
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border: none;
+}
+
+.desconto-card i {
+  opacity: 0.9;
+}
+
+/* ==================== SEÇÃO DE INSCRIÇÃO ==================== */
+.inscricao-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.inscricao-card {
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.inscricao-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.inscricao-icon i {
+  font-size: 4rem;
+  opacity: 0.9;
+}
+
+.inscricao-card .btn {
+  padding: 15px 25px;
+  font-weight: 600;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.inscricao-card .btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ==================== MODAIS ==================== */
+.modal-content {
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+  border-radius: 15px 15px 0 0;
+  border-bottom: none;
+  padding: 1.5rem 2rem;
+}
+
+.modal-body {
+  padding: 2rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+  padding: 1.5rem 2rem;
+  border-radius: 0 0 15px 15px;
+}
+
+/* Modal de detalhes dos cursos */
+.cursos-list {
+  padding-right: 0.5rem;
+}
+
+.curso-item {
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef !important;
+}
+
+.curso-item:hover {
+  background: #e3f2fd !important;
+  border-color: #2196f3 !important;
+  transform: translateX(5px);
+}
+
+.curso-item .badge {
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.curso-item h6 {
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+/* ==================== FORMULÁRIOS ==================== */
+.form-label {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.form-control, .form-select {
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+.form-control::placeholder {
+  color: #adb5bd;
+  font-style: italic;
+}
+
+/* ==================== BOTÕES DOS FORMULÁRIOS ==================== */
+.modal-footer .btn {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.modal-footer .btn:hover {
+  transform: translateY(-2px);
+}
+
+.modal-footer .btn-success {
+  background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.modal-footer .btn-success:hover {
+  background: linear-gradient(135deg, #218838, #1abc9c);
+}
+
+.modal-footer .btn-primary {
+  background: linear-gradient(135deg, #007bff, #6f42c1);
+}
+
+.modal-footer .btn-primary:hover {
+  background: linear-gradient(135deg, #0056b3, #5a2d91);
+}
+
+.modal-footer .btn-warning {
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+  color: #fff;
+}
+
+.modal-footer .btn-warning:hover {
+  background: linear-gradient(135deg, #e0a800, #e8590c);
+  color: #fff;
+}
+
+.modal-footer .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 0;
+  }
+  
+  .hero-section .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .areas-section, .vantagens-section, .info-section, .inscricao-section {
+    padding: 60px 0;
+  }
+  
+  .card-img-container {
+    height: 200px;
+  }
+  
+  .inscricao-icon i {
+    font-size: 3rem;
+  }
+  
+  .vantagem-icon i {
+    font-size: 2.5rem;
+  }
+  
+  .modal-body {
+    padding: 1.5rem;
+    max-height: 60vh;
+  }
+  
+  .modal-header, .modal-footer {
+    padding: 1rem 1.5rem;
+  }
+  
+  .modal-footer .d-flex {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .modal-footer .btn {
+    width: 100% !important;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section .display-4 {
+    font-size: 2rem;
+  }
+  
+  .hero-section .lead {
+    font-size: 1.1rem;
+  }
+  
+  .inscricao-card .btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .curso-item {
+    padding: 1rem !important;
+  }
+  
+  .curso-item h6 {
+    font-size: 0.9rem;
+  }
+}
+
+/* ==================== ANIMAÇÕES ==================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.area-card, .vantagem-card, .info-card, .inscricao-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.area-card:nth-child(2) { animation-delay: 0.1s; }
+.area-card:nth-child(3) { animation-delay: 0.2s; }
+.area-card:nth-child(4) { animation-delay: 0.3s; }
+
+/* ==================== SCROLL CUSTOMIZADO ==================== */
+.cursos-list::-webkit-scrollbar,
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cursos-list::-webkit-scrollbar-track,
+.modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.cursos-list::-webkit-scrollbar-thumb,
+.modal-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.cursos-list::-webkit-scrollbar-thumb:hover,
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
