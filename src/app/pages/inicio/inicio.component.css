@@ -52,57 +52,6 @@
   color: #424242;
 }
 
-.reasons-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.reasons-list li {
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
-  position: relative;
-  color: #495057;
-}
-
-.reasons-list li:before {
-  content: "•";
-  color: #007bff;
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  font-size: 1.2rem;
-}
-
-.reasons-list li strong {
-  color: #1565c0;
-  font-weight: 700;
-}
-
-/* Service Area Buttons */
-.service-area-btn {
-  background-color: #6c757d !important;
-  border-color: #6c757d !important;
-  color: white !important;
-  font-size: 0.85rem;
-  padding: 0.75rem 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  text-align: center;
-  min-height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.service-area-btn:hover {
-  background-color: #495057 !important;
-  border-color: #495057 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
 /* Services Section */
 .services-section {
   background-color: #f8f9fa;
@@ -138,26 +87,20 @@
   line-height: 1.6;
 }
 
-.service-icon .icon-placeholder {
-  width: 80px;
-  height: 80px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.service-icon {
+  margin-bottom: 1rem;
+}
+
+.service-icon-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .service-info {
   color: #495057;
   font-size: 0.95rem;
-}
-
-.service-areas .badge {
-  font-size: 0.8rem;
-  padding: 0.5rem 0.75rem;
-  margin-bottom: 0.5rem;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
 }
 
 .btn-warning {
@@ -191,6 +134,12 @@
   color: #ffffff;
   font-weight: 600;
   margin-bottom: 0.5rem;
+}
+
+.stat-item h4 {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .stat-item .small {
@@ -251,7 +200,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 15px;
-  max-width: 280px;
+  max-width: 380px;
   margin: 0 auto;
 }
 
@@ -378,22 +327,6 @@
   }
 }
 
-/* Estilos antigos removidos para evitar conflitos 
-.testimonial-item {
-   Removido para dar lugar aos novos estilos do carrossel 
-}
-*/
-
-.image-placeholder {
-  min-height: 300px;
-  background: linear-gradient(45deg, #f8f9fa 25%, transparent 25%), 
-              linear-gradient(-45deg, #f8f9fa 25%, transparent 25%), 
-              linear-gradient(45deg, transparent 75%, #f8f9fa 75%), 
-              linear-gradient(-45deg, transparent 75%, #f8f9fa 75%);
-  background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-}
-
 /* Partners Section */
 .partners-section {
   background-color: white;
@@ -407,19 +340,20 @@
   transform: scale(1.05);
 }
 
-.logo-placeholder {
-  min-height: 100px;
-  background: linear-gradient(45deg, #f8f9fa 25%, transparent 25%), 
-              linear-gradient(-45deg, #f8f9fa 25%, transparent 25%), 
-              linear-gradient(45deg, transparent 75%, #f8f9fa 75%), 
-              linear-gradient(-45deg, transparent 75%, #f8f9fa 75%);
-  background-size: 10px 10px;
-  background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
-  transition: background-color 0.3s ease;
+.partner-logo img {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
 }
 
-.logo-placeholder:hover {
-  background-color: #e9ecef;
+.partner-logo:hover img {
+  border-color: #007bff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* Responsive Design */
@@ -452,12 +386,6 @@
   
   .service-body {
     padding: 1.5rem;
-  }
-  
-  .service-area-btn {
-    font-size: 0.8rem;
-    padding: 0.6rem 0.4rem;
-    min-height: 50px;
   }
   
   .stat-item {

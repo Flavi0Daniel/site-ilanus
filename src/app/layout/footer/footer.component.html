@@ -1,1 +1,139 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Seção principal do footer -->
+    <div class="footer-main">
+      <div class="footer-grid">
+        
+        <!-- Coluna da empresa -->
+        <div class="footer-column">
+          <div class="footer-logo">
+            <img src="assets/logo-prokcel.png" alt="Prokcel" class="logo-img">
+            <h3>Prokcel</h3>
+          </div>
+          <p class="footer-description">
+            Formação & estágios profissionais especializados em desenvolver competências 
+            e transformar carreiras em Angola.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="WhatsApp">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links rápidos -->
+        <div class="footer-column">
+          <h4 class="footer-title">Links Rápidos</h4>
+          <ul class="footer-links">
+            <li><a routerLink="/">Início</a></li>
+            <li><a routerLink="/sobre-nos">Sobre Nós</a></li>
+            <li><a routerLink="/contactos">Contactos</a></li>
+          </ul>
+        </div>
+
+        <!-- Serviços -->
+        <div class="footer-column">
+          <h4 class="footer-title">Serviços</h4>
+          <ul class="footer-links">
+            <li><a routerLink="/servico-estagios">Estágios Profissionais</a></li>
+            <li><a routerLink="/servico-formacao">Formação Especializada</a></li>
+            <!--  <li><a href="#" (click)="scrollToService('certificacao')">Certificações</a></li>
+            <li><a href="#" (click)="scrollToService('consultoria')">Consultoria Empresarial</a></li>  -->
+          </ul>
+        </div>
+
+        <!-- Contactos -->
+        <div class="footer-column">
+          <h4 class="footer-title">Contactos</h4>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="bi bi-geo-alt"></i>
+              <span>Kilamba Kiaxi, Luanda - Angola</span>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-telephone"></i>
+              <div class="phone-numbers">
+                <a href="tel:+244949193887">+244 949 193 887</a>
+                <a href="tel:+244952376408">+244 952 376 408</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-envelope"></i>
+              <a href="mailto:joelcbongue.aca@outlook.com">joelcbongue.aca@outlook.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-clock"></i>
+              <div class="schedule">
+                <span>Seg - Sex: 8h - 20h</span>
+                <span>Sábado: 9h - 19h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="newsletter-section">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h4>Mantenha-se Atualizado</h4>
+          <p>Receba as últimas novidades sobre cursos, estágios e oportunidades profissionais.</p>
+        </div>
+        <form class="newsletter-form" (ngSubmit)="onNewsletterSubmit()" #newsletterForm="ngForm">
+          <div class="input-group">
+            <input 
+              type="email" 
+              placeholder="Seu email aqui..." 
+              [(ngModel)]="newsletterEmail"
+              name="email"
+              required
+              class="newsletter-input"
+              #emailInput="ngModel">
+            <button type="submit" class="newsletter-btn" [disabled]="!newsletterForm.valid">
+              <i class="bi bi-send"></i>
+              <span>Subscrever</span>
+            </button>
+          </div>
+          <div class="newsletter-error" *ngIf="emailInput.invalid && emailInput.touched">
+            Por favor, insira um email válido
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <div class="copyright">
+          <p>&copy; {{ currentYear }} Prokcel. Todos os direitos reservados.</p>
+        </div>
+        <div class="footer-bottom-links">
+          <a  (click)="scrollToTop()">
+            <i class="bi bi-arrow-up"></i>
+            Voltar ao Topo
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Botão flutuante WhatsApp -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/244949193887" target="_blank" class="whatsapp-btn" title="Fale conosco no WhatsApp">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+  </div>
+
+</footer>
