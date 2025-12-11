@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-// import emailjs from '@emailjs/browser'; // quando configurar o EmailJS devo lembrar de vir descomentar esse import
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 interface Area {
   id: number;
@@ -15,12 +16,24 @@ interface Curso {
   categoria?: string;
 }
 
+interface EmailResponse {
+  success: boolean;
+  message: string;
+  error?: string;
+}
+
 @Component({
   selector: 'app-servico-formacao',
   templateUrl: './servico-formacao.component.html',
   styleUrls: ['./servico-formacao.component.css']
 })
 export class ServicoFormacaoComponent {
+
+  // URL do PHP
+  //  private PHP_URL = 'http://localhost:8080/send_email.php'; // Desenvolvimento
+  // Para produção: 
+   private PHP_URL = 'https://prokcel.com/send_email.php';
+
 
   // Dados das áreas e cursos
   areas: Area[] = [
@@ -664,6 +677,10 @@ export class ServicoFormacaoComponent {
   showParticularForm = false;
   showEmpresarialForm = false;
 
+  // Estados de loading
+  isLoadingEmail = false;
+  isLoadingWhatsApp = false;
+
   // Form data
   formParticular = {
     nomeCompleto: '',
@@ -690,10 +707,7 @@ export class ServicoFormacaoComponent {
   // Cursos filtrados para os selects
   cursosDisponiveis: Curso[] = [];
 
-  constructor() {
-    // Inicialização do EmailJS (comentado)
-    // emailjs.init('YOUR_PUBLIC_KEY');
-  }
+  constructor(private http: HttpClient) {}
 
   // Abrir modal de detalhes
   abrirModal(area: Area) {
@@ -767,107 +781,116 @@ export class ServicoFormacaoComponent {
 
   // Enviar por WhatsApp
   enviarWhatsApp(isParticular: boolean = true) {
+    this.isLoadingWhatsApp = true;
     const whatsappNumber = '+244949193887';
 
-    // Tratamento separado para formulário Particular
-    if (isParticular) {
-      const form = this.formParticular;
-      let message = `*Inscrição para Formação - Particular*\n\n`;
-      message += `📋 *Dados Pessoais:*\n`;
-      message += `• Nome: ${form.nomeCompleto}\n`;
-      message += `• Email: ${form.email}\n`;
-      message += `• Telefone: ${form.telefone}\n`;
-      if (form.whatsapp) message += `• WhatsApp: ${form.whatsapp}\n`;
+    setTimeout(() => {
+      if (isParticular) {
+        const form = this.formParticular;
+        const area = this.areas.find(a => a.id.toString() === form.areaSelecionada);
+        const curso = this.cursosDisponiveis.find(c => c.nome === form.cursoSelecionado);
 
-      const area = this.areas.find(a => a.id.toString() === form.areaSelecionada);
-      const curso = this.cursosDisponiveis.find(c => c.nome === form.cursoSelecionado);
+        let message = `*Inscrição para Formação - Particular*\n\n`;
+        message += `📋 *Dados Pessoais:*\n`;
+        message += `• Nome: ${form.nomeCompleto}\n`;
+        message += `• Email: ${form.email}\n`;
+        message += `• Telefone: ${form.telefone}\n`;
+        if (form.whatsapp) message += `• WhatsApp: ${form.whatsapp}\n`;
+        message += `\n📚 *Formação de Interesse:*\n`;
+        message += `• Área: ${area?.nome || 'Não especificada'}\n`;
+        message += `• Curso: ${curso?.nome || 'Não especificado'}\n`;
+        if (form.mensagem) message += `\n💬 *Mensagem:*\n${form.mensagem}`;
 
-      message += `\n📚 *Formação de Interesse:*\n`;
-      message += `• Área: ${area?.nome || 'Não especificada'}\n`;
-      message += `• Curso: ${curso?.nome || 'Não especificado'}\n`;
+        const whatsappUrl = `https://wa.me/${whatsappNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+      } else {
+        const form = this.formEmpresarial;
+        const area = this.areas.find(a => a.id.toString() === form.areaSelecionada);
+        const curso = this.cursosDisponiveis.find(c => c.nome === form.cursoSelecionado);
 
-      if (form.mensagem) {
-        message += `\n💬 *Mensagem:*\n${form.mensagem}`;
+        let message = `*Inscrição para Formação - Empresarial*\n\n`;
+        message += `🏢 *Dados da Empresa:*\n`;
+        message += `• Empresa: ${form.nomeEmpresa}\n`;
+        message += `• Responsável: ${form.nomeResponsavel}\n`;
+        message += `• Nº Formandos: ${form.numeroFormandos}\n`;
+        message += `• Email: ${form.email}\n`;
+        message += `• Telefone: ${form.telefone}\n`;
+        if (form.whatsapp) message += `• WhatsApp: ${form.whatsapp}\n`;
+        message += `\n📚 *Formação de Interesse:*\n`;
+        message += `• Área: ${area?.nome || 'Não especificada'}\n`;
+        message += `• Curso: ${curso?.nome || 'Não especificado'}\n`;
+        if (form.mensagem) message += `\n💬 *Mensagem:*\n${form.mensagem}`;
+
+        const whatsappUrl = `https://wa.me/${whatsappNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
       }
 
-      const whatsappUrl = `https://wa.me/${whatsappNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, '_blank');
-
-    // Tratamento separado para formulário Empresarial
-    } else {
-      const form = this.formEmpresarial;
-      let message = `*Inscrição para Formação - Empresarial*\n\n`;
-      message += `🏢 *Dados da Empresa:*\n`;
-      message += `• Empresa: ${form.nomeEmpresa}\n`;
-      message += `• Responsável: ${form.nomeResponsavel}\n`;
-      message += `• Nº Formandos: ${form.numeroFormandos}\n`;
-      message += `• Email: ${form.email}\n`;
-      message += `• Telefone: ${form.telefone}\n`;
-      if (form.whatsapp) message += `• WhatsApp: ${form.whatsapp}\n`;
-
-      const area = this.areas.find(a => a.id.toString() === form.areaSelecionada);
-      const curso = this.cursosDisponiveis.find(c => c.nome === form.cursoSelecionado);
-
-      message += `\n📚 *Formação de Interesse:*\n`;
-      message += `• Área: ${area?.nome || 'Não especificada'}\n`;
-      message += `• Curso: ${curso?.nome || 'Não especificado'}\n`;
-
-      if (form.mensagem) {
-        message += `\n💬 *Mensagem:*\n${form.mensagem}`;
-      }
-
-      const whatsappUrl = `https://wa.me/${whatsappNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, '_blank');
-    }
+      this.isLoadingWhatsApp = false;
+      alert('✅ WhatsApp aberto com sucesso!');
+      this.fecharFormularios();
+    }, 1000);
   }
 
-  // Enviar por Email (simulação)
-  async enviarEmail(isParticular: boolean = true) {
-    // Simulação de envio (remover quando configurar EmailJS)
-    console.log('Simulando envio de email...');
-    alert('Email enviado com sucesso! (Esta é uma simulação)');
-    this.fecharFormularios();
-    
-    /*
-    // Código real para EmailJS (descomente quando configurar)
-    try {
-      const form = isParticular ? this.formParticular : this.formEmpresarial;
-      
-      const templateParams = {
-        to_email: 'seuemail@prokcel.com', // Substitua pelo email da empresa
-        from_name: isParticular ? form.nomeCompleto : (form as any).nomeResponsavel,
-        from_email: form.email,
-        phone: form.telefone,
-        whatsapp: form.whatsapp || 'Não informado',
-        area: this.areas.find(a => a.id.toString() === form.areaSelecionada)?.nome || 'Não especificada',
-        curso: this.cursosDisponiveis.find(c => c.nome === form.cursoSelecionado)?.nome || 'Não especificado',
-        message: form.mensagem || 'Sem mensagem adicional',
-        tipo_inscricao: isParticular ? 'Particular' : 'Empresarial',
-        // Campos específicos para empresarial
-        ...(isParticular ? {} : {
-          nome_empresa: (form as any).nomeEmpresa,
-          numero_formandos: (form as any).numeroFormandos
-        })
-      };
+  // Enviar por Email via PHP
+  enviarEmail(isParticular: boolean = true) {
+    this.isLoadingEmail = true;
 
-      await emailjs.send(
-        'YOUR_SERVICE_ID', // Configure no EmailJS
-        'YOUR_TEMPLATE_ID', // Configure no EmailJS
-        templateParams
-      );
+    const area = this.areas.find(a => a.id.toString() === 
+      (isParticular ? this.formParticular.areaSelecionada : this.formEmpresarial.areaSelecionada));
 
-      alert('Email enviado com sucesso!');
-      this.fecharFormularios();
-    } catch (error) {
-      console.error('Erro ao enviar email:', error);
-      alert('Erro ao enviar email. Tente novamente.');
+    let dados: any = {
+      tipoFormulario: isParticular ? 'formacaoParticular' : 'formacaoEmpresa',
+      email: isParticular ? this.formParticular.email : this.formEmpresarial.email,
+      telefone: isParticular ? this.formParticular.telefone : this.formEmpresarial.telefone,
+      whatsapp: isParticular ? this.formParticular.whatsapp : this.formEmpresarial.whatsapp,
+      areaNome: area?.nome || 'Não especificada',
+      cursoSelecionado: isParticular ? this.formParticular.cursoSelecionado : this.formEmpresarial.cursoSelecionado,
+      mensagem: isParticular ? this.formParticular.mensagem : this.formEmpresarial.mensagem
+    };
+
+    if (isParticular) {
+      dados.nomeCompleto = this.formParticular.nomeCompleto;
+    } else {
+      dados.nomeEmpresa = this.formEmpresarial.nomeEmpresa;
+      dados.nomeResponsavel = this.formEmpresarial.nomeResponsavel;
+      dados.numeroFormandos = this.formEmpresarial.numeroFormandos;
     }
-    */
+
+    this.enviarEmailPHP(dados).subscribe({
+      next: (response) => {
+        this.isLoadingEmail = false;
+        if (response.success) {
+          alert('✅ Email enviado com sucesso!');
+          this.fecharFormularios();
+        } else {
+          alert('❌ ' + response.message);
+        }
+      },
+      error: (error) => {
+        this.isLoadingEmail = false;
+        alert('❌ Erro ao enviar email. Tente novamente.');
+        console.error('Erro:', error);
+      }
+    });
+  }
+
+  // Função HTTP para enviar ao PHP
+  private enviarEmailPHP(dados: any): Observable<EmailResponse> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<EmailResponse>(this.PHP_URL, dados, { headers });
   }
 
   // Enviar para ambos (WhatsApp + Email)
   enviarParaAmbos(isParticular: boolean = true) {
+    // Envia WhatsApp
     this.enviarWhatsApp(isParticular);
-    this.enviarEmail(isParticular);
+    
+    // Aguarda 1.5s e envia Email
+    setTimeout(() => {
+      this.enviarEmail(isParticular);
+    }, 1500);
   }
+
+  
+
 }

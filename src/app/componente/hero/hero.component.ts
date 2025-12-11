@@ -11,7 +11,7 @@ export class HeroComponent {
   constructor(private router: Router) {}
 
   navigateToServices() {
-    this.router.navigate(['/servicos']);
+    this.router.navigate(['/sobre-nos']);
   }
 
 }

@@ -40,7 +40,10 @@ export class HeaderComponent implements OnInit {
     const navbar = document.getElementById('navbarNav');
     const toggler = document.querySelector('.navbar-toggler');
     const dropdown = target.closest('.dropdown');
-   
+    
+    // CORREÇÃO: Verificar se clicou em um item do dropdown
+    const dropdownItem = target.closest('.dropdown-item');
+    
     // Fechar menu se clicar fora dele
     if (navbar && toggler && this.isMenuOpen) {
       if (!navbar.contains(target) && !toggler.contains(target)) {
@@ -48,8 +51,9 @@ export class HeaderComponent implements OnInit {
       }
     }
 
-    // Fechar dropdown se clicar fora dele
-    if (!dropdown && this.isDropdownOpen) {
+    // CORREÇÃO: Não fechar dropdown se clicar em um item dele
+    // Fechar dropdown apenas se clicar fora E não for um item do dropdown
+    if (!dropdown && this.isDropdownOpen && !dropdownItem) {
       this.hideDropdown();
     }
   }
@@ -111,6 +115,7 @@ export class HeaderComponent implements OnInit {
 
   toggleDropdown(event: Event) {
     event.preventDefault();
+    event.stopPropagation(); // CORREÇÃO: Impedir propagação do evento
     
     // No mobile, toggle o dropdown
     if (window.innerWidth <= 991) {

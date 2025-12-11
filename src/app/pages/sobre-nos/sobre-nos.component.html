@@ -60,21 +60,21 @@
 </section>
 
 <!-- Values Section -->
-<section class="values-section">
+<section class="values-section"> 
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="section-title">Principais valores</h2>
       <p class="section-subtitle">Praticamos o que falamos</p>
     </div>
     <div class="row justify-content-center">
-      <div class="col-lg-2 col-md-4 col-sm-6 mb-4" *ngFor="let value of companyValues; trackBy: trackByValueTitle">
+      <div class="col-lg-4 col-md-4 col-sm-6 mb-4" *ngFor="let value of companyValues; trackBy: trackByValueTitle">
         <div class="value-card"
              (mouseenter)="onValueCardHover(value)" 
              (mouseleave)="onValueCardLeave(value)">
           <div class="value-icon">
             <i [class]="value.icon"></i>
           </div>
-          <h5 class="value-title">{{ value.title }}</h5>
+          <h6 class="value-title">{{ value.title }}</h6>
           <p class="value-description">{{ value.description }}</p>
         </div>
       </div>

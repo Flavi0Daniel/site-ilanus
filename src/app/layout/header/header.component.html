@@ -56,17 +56,16 @@
             (mouseenter)="showDropdown()" 
             (mouseleave)="hideDropdown()">
           <a class="nav-link dropdown-toggle"
+             href="javascript:void(0)"
              [class.active]="isServicosActive()"
              (click)="toggleDropdown($event)"
              role="button"
-             aria-expanded="false">
+             [attr.aria-expanded]="isDropdownOpen">
             <i class="bi bi-briefcase me-1"></i>
             Serviços
           </a>
           <ul class="dropdown-menu" 
-              [class.show]="isDropdownOpen"
-              (mouseenter)="showDropdown()"
-              (mouseleave)="hideDropdown()">
+              [class.show]="isDropdownOpen">
             <li>
               <a class="dropdown-item" 
                  routerLink="/servico-estagios"

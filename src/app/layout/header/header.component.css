@@ -79,7 +79,7 @@
 
 .navbar-solid .navbar-nav .nav-link:hover {
   background-color: rgba(108, 117, 125, 0.1);
-  color: #007bff !important;
+  color: #E94E1B !important;
 }
 
 /* Active link styles */
@@ -89,7 +89,7 @@
 }
 
 .navbar-solid .navbar-nav .nav-link.active {
-  background-color: #007bff;
+  background-color: #E94E1B;
   color: #ffffff !important;
 }
 
@@ -98,16 +98,24 @@
   position: relative;
 }
 
-/* Área invisível para manter o hover ativo */
-.navbar-nav .dropdown::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: -10px;
-  z-index: 1;
-  background: transparent;
+/* Área invisível para manter o hover ativo - APENAS NO DESKTOP */
+@media (min-width: 992px) {
+  .navbar-nav .dropdown::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    z-index: 1;
+    background: transparent;
+    pointer-events: none;
+  }
+  
+  .navbar-nav .dropdown-toggle {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .navbar-nav .dropdown-toggle::after {
@@ -166,7 +174,7 @@
 
 .dropdown-item:hover {
   background-color: rgba(0, 123, 255, 0.1);
-  color: #007bff;
+  color: #E94E1B;
   transform: translateX(5px);
 }
 
@@ -176,7 +184,7 @@
 }
 
 .dropdown-item.active {
-  background-color: #007bff;
+  background-color: #E94E1B;
   color: #ffffff !important;
 }
 

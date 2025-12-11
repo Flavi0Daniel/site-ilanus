@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { EmailJSResponseStatus } from '@emailjs/browser';
-import * as emailjs from '@emailjs/browser';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 declare var bootstrap: any;
 
+interface EmailResponse {
+  success: boolean;
+  message: string;
+  error?: string;
+}
 
 @Component({
   selector: 'app-servico-estagios',
@@ -12,6 +17,12 @@ declare var bootstrap: any;
   styleUrls: ['./servico-estagios.component.css']
 })
 export class ServicoEstagiosComponent implements OnInit {
+
+  // URL do PHP (ajuste conforme seu ambiente)
+  // private PHP_URL = 'http://localhost:8080/send_email.php'; // Desenvolvimento local
+  // Para produção na Hostgator, use: 
+   private PHP_URL = 'https://prokcel.com/send_email.php';
+
 
   // Formulários para as modais
   formParticular: FormGroup;
@@ -38,38 +49,51 @@ export class ServicoEstagiosComponent implements OnInit {
   // Lista de vantagens
   vantagens = [
     {
-      icon: 'bi-award',
-      titulo: 'Certificados Reconhecidos',
-      descricao: 'Certificados com informações relevantes para candidaturas e promoções'
-    },
-    {
-      icon: 'bi-file-earmark-text',
-      titulo: 'Carta de Recomendação',
-      descricao: 'Carta de recomendação aos estagiários com desempenho acima da média'
-    },
-    {
-      icon: 'bi-mortarboard',
-      titulo: 'Cursos Personalizados',
-      descricao: 'Cursos personalizados e formação ministrada em ambiente empresarial'
-    },
-    {
-      icon: 'bi-person-check',
-      titulo: 'Professores Capacitados',
-      descricao: 'Professores qualificados e com experiência no mercado'
+      icon: 'bi-book',
+      titulo: 'Aplicação Prática dos Conhecimentos',
+      descricao: 'Aplicação prática dos conhecimentos adquiridos na academia em ambiente empresarial real'
     },
     {
       icon: 'bi-building',
-      titulo: 'Ambiente Empresarial',
-      descricao: 'Escritórios com acesso à internet e computadores'
+      titulo: 'Visão Clara da Rotina Empresarial',
+      descricao: 'Visão mais clara da rotina de uma empresa e criação de networking profissional'
     },
     {
-      icon: 'bi-credit-card',
-      titulo: 'Pagamento Facilitado',
-      descricao: 'Pagamentos em 2 prestações (60% e 40%)'
+      icon: 'bi-briefcase',
+      titulo: 'Clareza sobre a Profissão',
+      descricao: 'Visão mais clara sobre a profissão escolhida e experiência profissional enriquecedora'
+    },
+    {
+      icon: 'bi-buildings',
+      titulo: 'Garantia de Estágio',
+      descricao: 'Garantimos estágio em duas ou mais empresas para todos os assinantes'
+    },
+    {
+      icon: 'bi-graph-up-arrow',
+      titulo: 'Aperfeiçoamento de Competências',
+      descricao: 'Aperfeiçoamento e/ou desenvolvimento das habilidades e competências profissionais'
+    },
+    {
+      icon: 'bi-door-open',
+      titulo: 'Novas Oportunidades',
+      descricao: 'Inserção em novas realidades de trabalho e possibilidade de ser efetivado'
+    },
+    {
+      icon: 'bi-file-earmark-text',
+      titulo: 'Referência Profissional',
+      descricao: 'Obtenção de referência no final do período de estágio e possibilidade de ser indicado a outras entidades'
+    },
+    {
+      icon: 'bi-tag',
+      titulo: 'Desconto Especial',
+      descricao: 'Desconto de 5% em todos os nossos produtos, para clientes e parceiros.'
     }
   ];
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient
+  ) {
     // Inicialização dos formulários
     this.formParticular = this.formBuilder.group({
       nomeCompleto: ['', [Validators.required, Validators.minLength(3)]],
@@ -93,8 +117,7 @@ export class ServicoEstagiosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Inicialização do EmailJS (substitua pelos seus IDs)
-    emailjs.init("YOUR_PUBLIC_KEY");
+    // Não é mais necessário inicializar EmailJS
   }
 
   /**
@@ -125,7 +148,6 @@ export class ServicoEstagiosComponent implements OnInit {
       const dados = this.formParticular.value;
       const mensagem = this.criarMensagemWhatsAppParticular(dados);
       
-      // Simula delay de envio
       setTimeout(() => {
         const numeroWhatsApp = '+244949193887';
         const url = `https://wa.me/${numeroWhatsApp.replace('+', '')}?text=${encodeURIComponent(mensagem)}`;
@@ -133,9 +155,8 @@ export class ServicoEstagiosComponent implements OnInit {
         window.open(url, '_blank');
         this.isLoadingWhatsApp = false;
         
-        // Fecha a modal após envio
         this.fecharModal('modalParticular');
-        this.mostrarSucesso();
+        this.mostrarSucesso('WhatsApp');
         this.limparFormulario('particular');
       }, 1000);
     } else {
@@ -161,7 +182,7 @@ export class ServicoEstagiosComponent implements OnInit {
         this.isLoadingWhatsApp = false;
         
         this.fecharModal('modalEmpresa');
-        this.mostrarSucesso();
+        this.mostrarSucesso('WhatsApp');
         this.limparFormulario('empresa');
       }, 1000);
     } else {
@@ -170,67 +191,82 @@ export class ServicoEstagiosComponent implements OnInit {
   }
 
   /**
-   * Envia email para particular (simulação - substitua pela minha outra implementação)
+   * Envia email via PHP para particular
    */
   enviarEmailParticular(): void {
     if (this.formParticular.valid) {
       this.isLoadingEmail = true;
       
-      // Simulação de envio de email
-      setTimeout(() => {
-        console.log('Email enviado para particular:', this.formParticular.value);
-        this.isLoadingEmail = false;
-        this.fecharModal('modalParticular');
-        this.mostrarSucesso();
-        this.limparFormulario('particular');
-      }, 2000);
-
-      // Implementação real do EmailJS (descomentar quando configurar)
-      /*
-      const templateParams = {
-        to_email: 'joelcbongue.aca@outlook.com',
-        from_name: this.formParticular.value.nomeCompleto,
-        from_email: this.formParticular.value.email,
-        telefone: this.formParticular.value.telefone,
-        whatsapp: this.formParticular.value.whatsapp,
-        estagio: this.formParticular.value.estagio,
-        message: this.formParticular.value.mensagem || 'Sem mensagem adicional',
-        tipo: 'Inscrição Particular'
+      const dados = {
+        ...this.formParticular.value,
+        tipo: 'Particular'
       };
 
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-        .then((response: EmailJSResponseStatus) => {
+      this.enviarEmailPHP(dados).subscribe({
+        next: (response) => {
           this.isLoadingEmail = false;
-          this.fecharModal('modalParticular');
-          this.mostrarSucesso();
-          this.limparFormulario('particular');
-        }, (error) => {
+          if (response.success) {
+            this.fecharModal('modalParticular');
+            this.mostrarSucesso('Email');
+            this.limparFormulario('particular');
+          } else {
+            this.mostrarErro(response.message);
+          }
+        },
+        error: (error) => {
           this.isLoadingEmail = false;
-          this.mostrarErro();
-        });
-      */
+          this.mostrarErro('Erro ao enviar email. Tente novamente.');
+          console.error('Erro:', error);
+        }
+      });
     } else {
       this.marcarCamposInvalidos(this.formParticular);
     }
   }
 
   /**
-   * Envia email para empresa (simulação)
+   * Envia email via PHP para empresa
    */
   enviarEmailEmpresa(): void {
     if (this.formEmpresa.valid) {
       this.isLoadingEmail = true;
       
-      setTimeout(() => {
-        console.log('Email enviado para empresa:', this.formEmpresa.value);
-        this.isLoadingEmail = false;
-        this.fecharModal('modalEmpresa');
-        this.mostrarSucesso();
-        this.limparFormulario('empresa');
-      }, 2000);
+      const dados = {
+        ...this.formEmpresa.value,
+        tipo: 'Empresa'
+      };
+
+      this.enviarEmailPHP(dados).subscribe({
+        next: (response) => {
+          this.isLoadingEmail = false;
+          if (response.success) {
+            this.fecharModal('modalEmpresa');
+            this.mostrarSucesso('Email');
+            this.limparFormulario('empresa');
+          } else {
+            this.mostrarErro(response.message);
+          }
+        },
+        error: (error) => {
+          this.isLoadingEmail = false;
+          this.mostrarErro('Erro ao enviar email. Tente novamente.');
+          console.error('Erro:', error);
+        }
+      });
     } else {
       this.marcarCamposInvalidos(this.formEmpresa);
     }
+  }
+
+  /**
+   * Envia dados para o PHP via HTTP POST
+   */
+  private enviarEmailPHP(dados: any): Observable<EmailResponse> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    return this.http.post<EmailResponse>(this.PHP_URL, dados, { headers });
   }
 
   /**
@@ -238,13 +274,37 @@ export class ServicoEstagiosComponent implements OnInit {
    */
   enviarAmbosParticular(): void {
     if (this.formParticular.valid) {
-      // Primeiro envia WhatsApp
-      this.enviarWhatsAppParticular();
+      // Envia WhatsApp
+      const dados = this.formParticular.value;
+      const mensagem = this.criarMensagemWhatsAppParticular(dados);
+      const numeroWhatsApp = '+244949193887';
+      const url = `https://wa.me/${numeroWhatsApp.replace('+', '')}?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, '_blank');
       
-      // Depois simula envio de email
-      setTimeout(() => {
-        this.enviarEmailParticular();
-      }, 1500);
+      // Envia Email via PHP
+      this.isLoadingEmail = true;
+      const dadosEmail = {
+        ...dados,
+        tipo: 'Particular'
+      };
+
+      this.enviarEmailPHP(dadosEmail).subscribe({
+        next: (response) => {
+          this.isLoadingEmail = false;
+          if (response.success) {
+            this.fecharModal('modalParticular');
+            this.mostrarSucesso('ambos');
+            this.limparFormulario('particular');
+          } else {
+            this.mostrarErro('WhatsApp enviado, mas houve erro no email: ' + response.message);
+          }
+        },
+        error: (error) => {
+          this.isLoadingEmail = false;
+          this.mostrarErro('WhatsApp enviado, mas houve erro no email.');
+          console.error('Erro:', error);
+        }
+      });
     } else {
       this.marcarCamposInvalidos(this.formParticular);
     }
@@ -255,11 +315,37 @@ export class ServicoEstagiosComponent implements OnInit {
    */
   enviarAmbosEmpresa(): void {
     if (this.formEmpresa.valid) {
-      this.enviarWhatsAppEmpresa();
+      // Envia WhatsApp
+      const dados = this.formEmpresa.value;
+      const mensagem = this.criarMensagemWhatsAppEmpresa(dados);
+      const numeroWhatsApp = '+244949193887';
+      const url = `https://wa.me/${numeroWhatsApp.replace('+', '')}?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, '_blank');
       
-      setTimeout(() => {
-        this.enviarEmailEmpresa();
-      }, 1500);
+      // Envia Email via PHP
+      this.isLoadingEmail = true;
+      const dadosEmail = {
+        ...dados,
+        tipo: 'Empresa'
+      };
+
+      this.enviarEmailPHP(dadosEmail).subscribe({
+        next: (response) => {
+          this.isLoadingEmail = false;
+          if (response.success) {
+            this.fecharModal('modalEmpresa');
+            this.mostrarSucesso('ambos');
+            this.limparFormulario('empresa');
+          } else {
+            this.mostrarErro('WhatsApp enviado, mas houve erro no email: ' + response.message);
+          }
+        },
+        error: (error) => {
+          this.isLoadingEmail = false;
+          this.mostrarErro('WhatsApp enviado, mas houve erro no email.');
+          console.error('Erro:', error);
+        }
+      });
     } else {
       this.marcarCamposInvalidos(this.formEmpresa);
     }
@@ -346,15 +432,19 @@ _Mensagem enviada através do site da Prokcel_`;
   /**
    * Mostra mensagem de sucesso
    */
-  private mostrarSucesso(): void {
-    alert('✅ Inscrição enviada com sucesso! Em breve entraremos em contacto.');
+  private mostrarSucesso(tipo: string): void {
+    if (tipo === 'ambos') {
+      alert('✅ Inscrição enviada com sucesso via WhatsApp e Email! Em breve entraremos em contacto.');
+    } else {
+      alert(`✅ Inscrição enviada com sucesso via ${tipo}! Em breve entraremos em contacto.`);
+    }
   }
 
   /**
    * Mostra mensagem de erro
    */
-  private mostrarErro(): void {
-    alert('❌ Erro ao enviar inscrição. Tente novamente.');
+  private mostrarErro(mensagem?: string): void {
+    alert(`❌ ${mensagem || 'Erro ao enviar inscrição. Tente novamente.'}`);
   }
 
   /**
