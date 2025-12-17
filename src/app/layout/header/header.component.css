@@ -31,6 +31,33 @@
   flex-direction: column;
 }
 
+.brand-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.brand-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Adiciona um filtro de brilho no hover quando transparente */
+.navbar-transparent .brand-logo:hover {
+  filter: brightness(1.1);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
 .brand-name {
   font-size: 1.8rem;
   font-weight: 700;
@@ -238,6 +265,10 @@
   .navbar {
     padding: 0.5rem 0;
   }
+
+  .brand-logo {
+    height: 40px;
+  }
  
   .brand-name {
     font-size: 1.5rem;
@@ -245,6 +276,10 @@
  
   .brand-subtitle {
     font-size: 0.6rem;
+  }
+
+  .brand-logo-wrapper {
+    gap: 10px;
   }
  
   .navbar-collapse {
@@ -323,12 +358,20 @@
 }
 
 @media (max-width: 575.98px) {
+  .brand-logo {
+    height: 35px;
+  }
+
   .brand-name {
     font-size: 1.3rem;
   }
  
   .brand-subtitle {
     font-size: 0.55rem;
+  }
+
+  .brand-logo-wrapper {
+    gap: 8px;
   }
  
   .navbar-nav .nav-link {

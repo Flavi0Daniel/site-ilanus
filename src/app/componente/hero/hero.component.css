@@ -16,7 +16,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('src\assets\hero-background1.jpg');
+  background-image: url('src/assets/hero-background1.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -47,55 +47,79 @@
   animation: fadeInUp 1s ease-out;
 }
 
-/* Company Info */
-.company-info {
-  margin-bottom: 2rem;
-}
-
-.company-name {
-  font-size: 2.5rem;
+/* Main Hero Title */
+.hero-title {
+  font-size: 2.8rem;
   font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
   color: #ffffff;
-  margin-bottom: 0.5rem;
-  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   animation: fadeInUp 1s ease-out 0.2s both;
 }
 
-.company-subtitle {
-  font-size: 0.9rem;
-  color: #e8e8e8;
-  font-weight: 500;
-  letter-spacing: 2px;
-  margin-bottom: 0;
-  text-transform: uppercase;
+/* Hero Subtitle Wrapper */
+.hero-subtitle-wrapper {
+  margin-bottom: 2rem;
   animation: fadeInUp 1s ease-out 0.4s both;
 }
 
-/* Main Hero Title */
-.hero-title {
-  font-size: 2.5rem;
+.hero-subtitle-main {
+  font-size: 1.8rem;
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  animation: fadeInUp 1s ease-out 0.6s both;
+  color: #E94E1B;
+  margin-bottom: 1rem;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 8px rgba(233, 78, 27, 0.4);
+  animation: pulse 2s ease-in-out infinite;
 }
 
-/* Hero Subtitle */
-.hero-subtitle {
-  font-size: 1.3rem;
-  font-weight: 400;
-  line-height: 1.5;
+/* Brand Values Container */
+.hero-brand-values {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.4rem;
+  font-weight: 500;
   color: #e8e8e8;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  animation: fadeInUp 1s ease-out 0.8s both;
+  line-height: 1.6;
+}
+
+.brand-value {
+  display: inline-block;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.brand-value:hover {
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+/* Highlight for PRO and CEL */
+.highlight {
+  color: #E94E1B;
+  font-weight: 700;
+  font-size: 1.1em;
+  text-shadow: 0 0 10px rgba(233, 78, 27, 0.5),
+               0 0 20px rgba(233, 78, 27, 0.3);
+  position: relative;
+  display: inline-block;
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Separator between values */
+.separator {
+  color: #E94E1B;
+  font-size: 1.2rem;
+  font-weight: 700;
+  opacity: 0.8;
 }
 
 /* CTA Button */
 .btn-cta {
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  background: linear-gradient(135deg, #E94E1B 0%, #c73d14 100%);
   border: none;
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
@@ -105,8 +129,8 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
-  animation: fadeInUp 1s ease-out 1s both;
+  box-shadow: 0 8px 25px rgba(233, 78, 27, 0.4);
+  animation: fadeInUp 1s ease-out 0.6s both;
   position: relative;
   overflow: hidden;
 }
@@ -118,14 +142,14 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   transition: left 0.5s;
 }
 
 .btn-cta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(0, 123, 255, 0.4);
-  background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+  box-shadow: 0 12px 35px rgba(233, 78, 27, 0.5);
+  background: linear-gradient(135deg, #c73d14 0%, #a03310 100%);
 }
 
 .btn-cta:hover::before {
@@ -148,36 +172,58 @@
   }
 }
 
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(233, 78, 27, 0.5),
+                 0 0 20px rgba(233, 78, 27, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(233, 78, 27, 0.8),
+                 0 0 30px rgba(233, 78, 27, 0.5),
+                 0 0 40px rgba(233, 78, 27, 0.3);
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1199.98px) {
   .hero-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   
-  .company-name {
-    font-size: 2.2rem;
+  .hero-subtitle-main {
+    font-size: 1.6rem;
   }
   
-  .hero-subtitle {
-    font-size: 1.2rem;
+  .hero-brand-values {
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 991.98px) {
   .hero-section {
-    padding-top: 120px; /* Account for fixed header */
+    padding-top: 120px;
   }
   
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   
-  .company-name {
-    font-size: 2rem;
+  .hero-subtitle-main {
+    font-size: 1.5rem;
   }
   
-  .hero-subtitle {
-    font-size: 1.1rem;
+  .hero-brand-values {
+    font-size: 1.2rem;
+    gap: 0.8rem;
   }
   
   .btn-cta {
@@ -197,21 +243,20 @@
   }
   
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.9rem;
     line-height: 1.3;
-  }
-  
-  .company-name {
-    font-size: 1.8rem;
-  }
-  
-  .company-subtitle {
-    font-size: 0.8rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
     margin-bottom: 1.5rem;
+  }
+  
+  .hero-subtitle-main {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+  }
+  
+  .hero-brand-values {
+    font-size: 1.1rem;
+    gap: 0.6rem;
+    justify-content: center;
   }
   
   .btn-cta {
@@ -220,31 +265,41 @@
   }
   
   .hero-background {
-    background-attachment: scroll; /* Better performance on mobile */
+    background-attachment: scroll;
   }
 }
 
 @media (max-width: 575.98px) {
   .hero-title {
-    font-size: 1.8rem;
-  }
-  
-  .company-name {
     font-size: 1.6rem;
   }
   
-  .company-subtitle {
-    font-size: 0.7rem;
-    letter-spacing: 1px;
+  .hero-subtitle-main {
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.8rem;
   }
   
-  .hero-subtitle {
+  .hero-brand-values {
     font-size: 0.95rem;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .separator {
+    display: none;
+  }
+  
+  .brand-value {
+    text-align: center;
   }
   
   .btn-cta {
     padding: 0.7rem 1.2rem;
     font-size: 0.85rem;
+    width: 100%;
+    max-width: 300px;
   }
 }
 
@@ -258,15 +313,15 @@
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   .hero-content,
-  .company-name,
-  .company-subtitle,
   .hero-title,
-  .hero-subtitle,
-  .btn-cta {
+  .hero-subtitle-wrapper,
+  .btn-cta,
+  .highlight {
     animation: none;
   }
   
-  .btn-cta {
+  .btn-cta,
+  .brand-value {
     transition: none;
   }
 }

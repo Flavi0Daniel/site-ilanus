@@ -5,11 +5,16 @@
        'navbar-solid': !isHomePage || isScrolled
      }">
   <div class="container">
-    <!-- Brand -->
+    <!-- Brand with Logo -->
     <a class="navbar-brand" routerLink="/" (click)="closeMenu()">
       <div class="brand-container">
-        <span class="brand-name">Prokcel</span>
-        <small class="brand-subtitle">FORMAÇÃO & ESTÁGIOS PROFISSIONAL</small>
+        <div class="brand-logo-wrapper">
+          <img src="./../../../assets/logotipo.png" alt="Prokcel Logo" class="brand-logo">
+          <div class="brand-text">
+            <span class="brand-name">Prokcel</span>
+            <small class="brand-subtitle">FORMAÇÃO & ESTÁGIOS PROFISSIONAL</small>
+          </div>
+        </div>
       </div>
     </a>
     
