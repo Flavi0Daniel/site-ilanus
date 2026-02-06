@@ -35,15 +35,15 @@ export class ServicoEstagiosComponent implements OnInit {
   // Lista de estágios disponíveis
   estagiosDisponiveis = [
     'Gestão',
-    'Finanças',
+    'Contabilidade e Finanças',
     'Economia',
     'Marketing',
     'Arquitetura e Urbanismo',
     'Engenharia Informática',
     'Direito',
     'Gestão de Recursos Humanos',
-    'Comunicação Social',
-    'Contabilidade'
+    'Comunicação Social'
+    
   ];
 
   // Lista de vantagens
@@ -277,7 +277,7 @@ export class ServicoEstagiosComponent implements OnInit {
       // Envia WhatsApp
       const dados = this.formParticular.value;
       const mensagem = this.criarMensagemWhatsAppParticular(dados);
-      const numeroWhatsApp = '+244949193887';
+      const numeroWhatsApp = '+244925102139';
       const url = `https://wa.me/${numeroWhatsApp.replace('+', '')}?text=${encodeURIComponent(mensagem)}`;
       window.open(url, '_blank');
       
@@ -318,7 +318,7 @@ export class ServicoEstagiosComponent implements OnInit {
       // Envia WhatsApp
       const dados = this.formEmpresa.value;
       const mensagem = this.criarMensagemWhatsAppEmpresa(dados);
-      const numeroWhatsApp = '+244949193887';
+      const numeroWhatsApp = '+244925102139';
       const url = `https://wa.me/${numeroWhatsApp.replace('+', '')}?text=${encodeURIComponent(mensagem)}`;
       window.open(url, '_blank');
       

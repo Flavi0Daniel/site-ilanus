@@ -782,7 +782,7 @@ export class ServicoFormacaoComponent {
   // Enviar por WhatsApp
   enviarWhatsApp(isParticular: boolean = true) {
     this.isLoadingWhatsApp = true;
-    const whatsappNumber = '+244949193887';
+    const whatsappNumber = '+244925102139';
 
     setTimeout(() => {
       if (isParticular) {
