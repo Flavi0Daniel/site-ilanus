@@ -33,18 +33,30 @@ export class ServicoEstagiosComponent implements OnInit {
   isLoadingEmail = false;
 
   // Lista de estágios disponíveis
-  estagiosDisponiveis = [
-    'Gestão',
-    'Contabilidade e Finanças',
-    'Economia',
-    'Marketing',
-    'Arquitetura e Urbanismo',
-    'Engenharia Informática',
-    'Direito',
-    'Gestão de Recursos Humanos',
-    'Comunicação Social'
+  //estagiosDisponiveis = [
+   // 'Gestão',
+   // 'Contabilidade e Finanças',
+   // 'Economia',
+   // 'Marketing',
+   // 'Arquitetura e Urbanismo',
+   // 'Engenharia Informática',
+  //  'Direito',
+  //  'Gestão de Recursos Humanos',
+   // 'Comunicação Social'
     
-  ];
+  //];
+
+  estagiosDisponiveis = [
+  { nome: 'Gestão', icone: 'bi-briefcase' },
+  { nome: 'Contabilidade e Finanças', icone: 'bi-calculator' },
+  { nome: 'Economia', icone: 'bi-graph-up-arrow' },
+  { nome: 'Marketing', icone: 'bi-megaphone' },
+  { nome: 'Arquitetura e Urbanismo', icone: 'bi bi-rulers' },
+  { nome: 'Engenharia Informática', icone: 'bi-laptop' },
+  { nome: 'Direito', icone: 'bi-bank' }, // ou  bi-balance-scale
+  { nome: 'Gestão de Recursos Humanos', icone: 'bi-people' },
+  { nome: 'Comunicação Social', icone: 'bi-chat-quote' }
+];
 
   // Lista de vantagens
   vantagens = [

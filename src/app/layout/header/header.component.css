@@ -38,7 +38,7 @@
 }
 
 .brand-logo {
-  height: 50px;
+  height: 60px;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -106,7 +106,7 @@
 
 .navbar-solid .navbar-nav .nav-link:hover {
   background-color: rgba(108, 117, 125, 0.1);
-  color: #E94E1B !important;
+  color: #94cc54 !important;
 }
 
 /* Active link styles */
@@ -116,7 +116,7 @@
 }
 
 .navbar-solid .navbar-nav .nav-link.active {
-  background-color: #E94E1B;
+  background-color: #94cc54;
   color: #ffffff !important;
 }
 
@@ -201,7 +201,7 @@
 
 .dropdown-item:hover {
   background-color: rgba(0, 123, 255, 0.1);
-  color: #E94E1B;
+  color: #94cc54;
   transform: translateX(5px);
 }
 
@@ -211,7 +211,7 @@
 }
 
 .dropdown-item.active {
-  background-color: #E94E1B;
+  background-color: #94cc54;
   color: #ffffff !important;
 }
 
