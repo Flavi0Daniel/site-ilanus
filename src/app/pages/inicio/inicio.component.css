@@ -186,7 +186,7 @@
 }
 
 .testimonials-section .section-title {
-  color: #b8860b;
+  color: #7aa36a;
   font-weight: 700;
   position: relative;
   display: inline-block;
@@ -200,7 +200,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #b8860b, #ffd700);
+  background: linear-gradient(90deg, #7aa36a, #9dcd68);
   border-radius: 2px;
 }
 
@@ -270,7 +270,7 @@
   left: 0;
   width: 4px;
   height: 100%;
-  background: linear-gradient(180deg, #b8860b 0%, #ffd700 100%);
+  background: linear-gradient(180deg, #7aa36a 0%, #9dcd68 100%);
 }
 
 /* Ícone de aspas */
@@ -354,9 +354,9 @@
   height: 100px;
   object-fit: contain;
   border-radius: 8px;
-  background-color: #f8f9fa;
+ /*  background-color: #f8f9fa; */
   padding: 10px;
-  border: 1px solid #e9ecef;
+ /* border: 1px solid #e9ecef; */
   transition: all 0.3s ease;
 }
 

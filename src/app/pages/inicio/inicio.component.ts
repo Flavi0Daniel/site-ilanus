@@ -36,7 +36,7 @@ export class InicioComponent implements OnInit, OnDestroy {
     if (carouselElement && bootstrap?.Carousel) {
       // Inicializar o carrossel do Bootstrap com touch habilitado
       this.carousel = new bootstrap.Carousel(carouselElement, {
-        interval: 5000, // 5 segundos
+        interval: 4000, // 4 segundos
         ride: 'carousel',
         pause: 'hover',
         wrap: true,
