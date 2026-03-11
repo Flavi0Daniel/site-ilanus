@@ -88,8 +88,14 @@
 }
 
 .service-description {
-  color: #6c757d;
+  /* color: #6c757d; */
+  color: black;
   line-height: 1.6;
+
+  text-align: justify;
+  
+  hyphens: auto;             /* quebra palavras automaticamente */
+  word-spacing: 0.05em;      /* ajusta o espaçamento entre palavras */
 }
 
 .service-icon {
