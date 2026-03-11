@@ -161,7 +161,7 @@ export class ServicoEstagiosComponent implements OnInit {
       const mensagem = this.criarMensagemWhatsAppParticular(dados);
       
       setTimeout(() => {
-        const numeroWhatsApp = '+244949193887';
+        const numeroWhatsApp = '+244925102139';
         const url = `https://wa.me/${numeroWhatsApp.replace('+', '')}?text=${encodeURIComponent(mensagem)}`;
         
         window.open(url, '_blank');
@@ -187,7 +187,7 @@ export class ServicoEstagiosComponent implements OnInit {
       const mensagem = this.criarMensagemWhatsAppEmpresa(dados);
       
       setTimeout(() => {
-        const numeroWhatsApp = '+244949193887';
+        const numeroWhatsApp = '+244925102139';
         const url = `https://wa.me/${numeroWhatsApp.replace('+', '')}?text=${encodeURIComponent(mensagem)}`;
         
         window.open(url, '_blank');
