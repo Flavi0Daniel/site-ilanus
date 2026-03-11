@@ -67,7 +67,8 @@
 .hero-subtitle-main {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #E94E1B;
+  /* color: #E94E1B; */
+  color: #ffffff;
   margin-bottom: 1rem;
   letter-spacing: 3px;
   text-shadow: 2px 2px 8px rgba(233, 78, 27, 0.4);
@@ -111,7 +112,7 @@
 
 /* Separator between values */
 .separator {
-  color: #E94E1B;
+  /* color: #E94E1B; */
   font-size: 1.2rem;
   font-weight: 700;
   opacity: 0.8;
@@ -119,7 +120,8 @@
 
 /* CTA Button */
 .btn-cta {
-  background: linear-gradient(135deg, #E94E1B 0%, #c73d14 100%);
+  /* background: linear-gradient(135deg, #E94E1B 0%, #c73d14 100%); */
+  background: linear-gradient(135deg, #9dcd68 0%, #7aa36a 100%);
   border: none;
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
@@ -149,7 +151,8 @@
 .btn-cta:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 35px rgba(233, 78, 27, 0.5);
-  background: linear-gradient(135deg, #c73d14 0%, #a03310 100%);
+  /* background: linear-gradient(135deg, #c73d14 0%, #a03310 100%); */
+  background: linear-gradient(135deg, #7aa36a 0%, #9dcd68 100%);
 }
 
 .btn-cta:hover::before {

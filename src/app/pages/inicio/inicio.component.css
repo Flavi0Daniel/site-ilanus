@@ -8,6 +8,11 @@
 /* About Section */
 .about-section {
   background-color: #f8f9fa;
+
+  text-align: justify;
+  line-height: 1.6;          /* melhora a leitura */
+  hyphens: auto;             /* quebra palavras automaticamente */
+  word-spacing: 0.05em;      /* ajusta o espaçamento entre palavras */
 }
 
 .about-content-box {
