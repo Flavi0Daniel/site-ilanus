@@ -38,7 +38,8 @@
 
 /* Título do Formulário */
 .form-title {
-  color: #8b6f47;
+ /* color: #8b6f47; */
+  color: #94cc54;
   font-size: 28px;
   font-weight: 400;
   margin-bottom: 32px;
@@ -54,7 +55,8 @@
   transform: translateX(-50%);
   width: 60px;
   height: 2px;
-  background-color: #8b6f47;
+  /*background-color: #8b6f47;*/
+  background-color: #94cc54;
 }
 
 /* Inputs Customizados */
@@ -69,7 +71,8 @@
 }
 
 .custom-input:focus, .custom-textarea:focus {
-  border-bottom-color: #8b6f47;
+  /* border-bottom-color: #8b6f47; */
+  border-bottom-color: #94cc54;
   box-shadow: none;
   background-color: transparent;
 }
@@ -97,7 +100,8 @@
 
 /* Botão Customizado */
 .btn-custom {
-  background-color: #8b6f47;
+ /* background-color: #8b6f47; */
+  background-color: #94cc54;
   color: white;
   border: none;
   padding: 12px 40px;
@@ -109,7 +113,7 @@
 }
 
 .btn-custom:hover {
-  background-color: #6d5235;
+  background-color: #4a6b25;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(139, 111, 71, 0.3);
 }
@@ -144,18 +148,21 @@
 /* Ícones */
 .icon-large {
   font-size: 48px;
-  color: #8b6f47;
+ /* color: #8b6f47; */
+  color: #94cc54;
   transition: all 0.3s ease;
 }
 
 .info-card:hover .icon-large {
   transform: scale(1.1);
-  color: #6d5235;
+ /* color: #6d5235; */
+  color: #6f993f;
 }
 
 /* Títulos dos Cards */
 .info-title {
-  color: #8b6f47;
+ /* color: #8b6f47; */
+  color: #94cc54;
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 20px;
@@ -178,7 +185,8 @@
 }
 
 .info-content i {
-  color: #8b6f47;
+ /* color: #8b6f47; */
+  color: #94cc54;
 }
 
 /* Alertas */
