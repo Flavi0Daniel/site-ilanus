@@ -67,6 +67,10 @@
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
+  border: 1px solid #7aa36a !important; /* Cor verde do header do card */
+
 }
 
 .service-card:hover {
@@ -103,10 +107,21 @@
 }
 
 .service-icon-img {
-  width: 550px;
-  height: 300px;
-  object-fit: contain;
+  
+  /* object-fit: contain; */
+  /* border-radius: 8px; */
+
+  /* Em vez de width fixo, usamos 100% do espaço disponível */
+  width: 100%; 
+  /* Definimos um tamanho máximo para ela não crescer demais em ecrãs gigantes */
+  max-width: 550px; 
+  height: auto; /* Deixa o browser calcular a altura para não achatar a imagem */
+  aspect-ratio: 11 / 6; /* Mantém a proporção que tinhas (550/300 aprox) */
+  object-fit: cover; /* 'cover' costuma ficar melhor que 'contain' para fotos de pessoas */
   border-radius: 8px;
+  display: block;
+  margin: 0 auto; /* Garante a centralização horizontal */
+
 }
 
 .service-info {
