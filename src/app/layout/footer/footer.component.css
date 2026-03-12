@@ -1,6 +1,7 @@
 /* ===== FOOTER STYLES ===== */
 .footer {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+  background: linear-gradient(135deg, #7aa36a 0%, #9dcd68 100%);
+  /* background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%); */
   color: white;
   position: relative;
   margin-top: auto;
@@ -14,9 +15,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(139, 92, 246, 0.9) 50%, rgba(168, 85, 247, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(122, 163, 106, 0.95) 0%, rgba(157, 205, 104, 0.95) 100%);
+  /* background: linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(139, 92, 246, 0.9) 50%, rgba(168, 85, 247, 0.9) 100%); */
   z-index: 1;
 }
+
 
 .footer-container {
   position: relative;
@@ -149,7 +152,7 @@
 }
 
 .footer-links li a:hover {
-  color: #fbbf24;
+  color: #007bff;
   padding-left: 20px;
 }
 
@@ -173,7 +176,7 @@
 }
 
 .contact-item i {
-  color: #fbbf24;
+  color:  #f59e0b;
   font-size: 16px;
   margin-top: 2px;
   flex-shrink: 0;
@@ -187,7 +190,7 @@
 }
 
 .contact-item a:hover {
-  color: #fbbf24;
+  color: #007bff;
   text-decoration: underline;
 }
 

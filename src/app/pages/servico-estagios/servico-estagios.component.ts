@@ -129,7 +129,7 @@ export class ServicoEstagiosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Não é mais necessário inicializar EmailJS
+    
   }
 
   /**

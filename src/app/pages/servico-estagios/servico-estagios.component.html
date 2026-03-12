@@ -260,12 +260,12 @@
                 id="estagio" 
                 formControlName="estagio">
                 <option value="">Selecione um estágio</option>
-                <option [value]="estagio" *ngFor="let estagio of estagiosDisponiveis">
-                  {{ estagio }}
+                <option [value]="estagio.nome" *ngFor="let estagio of estagiosDisponiveis">
+                  {{ estagio.nome }}
                 </option>
               </select>
               <div class="invalid-feedback">
-                {{ getMensagemErro(formParticular, 'estagio') }}
+                {{ getMensagemErro(formParticular, 'estagio') }} 
               </div>
             </div>
             
@@ -454,8 +454,8 @@
                 id="estagioEmpresa" 
                 formControlName="estagio">
                 <option value="">Selecione um estágio</option>
-                <option [value]="estagio" *ngFor="let estagio of estagiosDisponiveis">
-                  {{ estagio }}
+                <option [value]="estagio.nome" *ngFor="let estagio of estagiosDisponiveis">
+                  {{ estagio.nome }}
                 </option>
               </select>
               <div class="invalid-feedback">
