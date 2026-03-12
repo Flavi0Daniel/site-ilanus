@@ -23,6 +23,12 @@
   position: relative;
   z-index: 2;
   padding: 2rem 0;
+
+  text-align: justify;
+  
+  hyphens: auto;             /* quebra palavras automaticamente */
+  word-spacing: 0.05em;      /* ajusta o espaçamento entre palavras */
+
 }
 
 .intro-title {
@@ -270,7 +276,8 @@
 /* Company Definition Section */
 .company-definition-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%); 
+  
   color: white;
 }
 
