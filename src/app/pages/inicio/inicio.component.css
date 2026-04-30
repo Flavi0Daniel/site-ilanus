@@ -143,7 +143,8 @@
 
 /* Statistics Section */
 .stats-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   background: linear-gradient(135deg, #7aa36a 0%, #9dcd68 100%);
+ /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
   color: white;
 }
 
@@ -368,6 +369,13 @@
 
 .partner-logo:hover {
   transform: scale(1.05);
+}
+
+.section-title02{
+  font-weight: 700;
+  /* color: #333; */
+  color: #9dcd68;
+  margin-bottom: 1.5rem;
 }
 
 .partner-logo img {

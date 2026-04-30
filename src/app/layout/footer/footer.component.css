@@ -119,7 +119,7 @@
   left: 0;
   width: 40px;
   height: 3px;
-  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  background: linear-gradient(90deg, #ffffff, #f7f4f0);
   border-radius: 2px;
 }
 
@@ -176,7 +176,8 @@
 }
 
 .contact-item i {
-  color:  #f59e0b;
+  /* color:  #f59e0b; */
+  color: white;
   font-size: 16px;
   margin-top: 2px;
   flex-shrink: 0;

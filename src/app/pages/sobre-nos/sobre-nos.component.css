@@ -185,6 +185,19 @@
   background: linear-gradient(to bottom, #f8fafc, #ffffff);
 }
 
+.section-title02{
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  background: #9dcd68;
+   /*linear-gradient(135deg, #ffffff 0%, #9dcd68 100%); */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #9dcd68;
+}
+
 .section-subtitle {
   font-size: 1.2rem;
   color: #64748b;
@@ -273,11 +286,11 @@
   z-index: 1;
 }
 
-/* Company Definition Section */
+/* Company Definition Section - Atualizado */
 .company-definition-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%); 
-  
+  /* Fundo azul sólido solicitado */
+  background-color: #122260; 
   color: white;
 }
 
@@ -285,30 +298,41 @@
   text-align: center;
 }
 
+/* O Título "O que nos define?" agora em verde sólido, sem degrade */
+.company-definition-section .section-title {
+  color: #9dcd68; 
+  font-weight: 700;
+  font-size: 2.8rem;
+  /* Reset de possíveis gradientes de outras classes */
+  background: none;
+  -webkit-text-fill-color: initial; 
+}
+
 .defining-qualities {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-top: 2rem;
 }
 
+/* As "Cenas" (Visão, Foco, etc) com fundo verde e texto branco */
 .quality-tag {
-  background: rgba(139, 92, 246, 0.2);
-  color: #e2e8f0;
+  background-color: #7aa36a; /* Verde da marca */
+  color: #ffffff; /* Texto branco */
   padding: 0.8rem 1.5rem;
   border-radius: 50px;
   font-size: 1rem;
   font-weight: 600;
-  border: 2px solid rgba(139, 92, 246, 0.3);
+  border: 2px solid transparent;
   transition: all 0.3s ease;
   cursor: default;
 }
 
 .quality-tag:hover {
-  background: rgba(139, 92, 246, 0.3);
-  border-color: #8b5cf6;
-  transform: translateY(-2px);
+  background-color: #9dcd68; /* Verde mais claro no hover */
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .company-summary {
@@ -317,13 +341,14 @@
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  margin-top: 3rem;
 }
 
 .summary-text {
   font-size: 1.2rem;
   line-height: 1.7;
   margin: 0;
-  color: #e2e8f0;
+  color: #ffffff;
 }
 
 /* Responsive Design */
