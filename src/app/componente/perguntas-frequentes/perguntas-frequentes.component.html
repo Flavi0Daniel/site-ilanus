@@ -1,0 +1,70 @@
+<div class="container my-5 faq-section">
+  
+  <!-- TÍTULO DINÂMICO CONFORME A PÁGINA -->
+  <div class="text-center mb-5" *ngIf="exibicao !== 'tudo'">
+    <h2 class="fw-bold text-primary">Perguntas Frequentes</h2>
+    <p class="text-muted">Esclareça as suas principais dúvidas rapidamente</p>
+  </div>
+
+  <!-- CATEGORIA 1: PROKCEL -->
+  <div class="faq-group mb-5" *ngIf="faqsProkcel.length > 0">
+    <h3 class="h4 text-secondary mb-4 border-bottom pb-2" *ngIf="exibicao === 'tudo'">
+      <i class="bi bi-building me-2"></i>Sobre a PROKCEL
+    </h3>
+    
+    <div class="accordion" id="accordionProkcel">
+      <div *ngFor="let item of faqsProkcel" class="accordion-item mb-3 shadow-sm border">
+        <h2 class="accordion-header">
+          <button 
+            class="accordion-button fw-semibold custom-accordion-btn" 
+            [class.collapsed]="!item.aberta"
+            type="button" 
+            (click)="toggleFaq(item)">
+            {{ item.pergunta }}
+            <i class="bi ms-auto" [ngClass]="item.aberta ? 'bi-dash-lg' : 'bi-plus-lg'"></i>
+          </button>
+        </h2>
+        <div class="accordion-collapse collapse" [class.show]="item.aberta">
+          <div class="accordion-body text-muted dynamic-content">
+            {{ item.resposta }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIA 2: ESTÁGIOS -->
+  <div class="faq-group mb-5" *ngIf="faqsEstagios.length > 0">
+    <h3 class="h4 text-secondary mb-4 border-bottom pb-2" *ngIf="exibicao === 'tudo'">
+      <i class="bi bi-journal-bookmark me-2"></i>Programas de Estágios
+    </h3>
+    
+    <div class="accordion" id="accordionEstagios">
+      <div *ngFor="let item of faqsEstagios" class="accordion-item mb-3 shadow-sm border">
+        <h2 class="accordion-header">
+          <button 
+            class="accordion-button fw-semibold custom-accordion-btn" 
+            [class.collapsed]="!item.aberta"
+            type="button" 
+            (click)="toggleFaq(item)">
+            {{ item.pergunta }}
+            <i class="bi ms-auto" [ngClass]="item.aberta ? 'bi-dash-lg' : 'bi-plus-lg'"></i>
+          </button>
+        </h2>
+        <div class="accordion-collapse collapse" [class.show]="item.aberta">
+          <div class="accordion-body text-muted dynamic-content">
+            {{ item.resposta }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTÃO DIRECIONADOR PARA AS SEÇÕES CURTAS -->
+  <div class="text-center mt-4" *ngIf="exibicao !== 'tudo'">
+    <a routerLink="/faq" class="btn btn-outline-primary px-4 py-2 rounded-pill fw-semibold shadow-sm">
+      Ver Todas as Perguntas <i class="bi bi-arrow-right ms-2"></i>
+    </a>
+  </div>
+
+</div>

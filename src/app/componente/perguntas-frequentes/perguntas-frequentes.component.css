@@ -1,0 +1,44 @@
+/* Remove a seta padrão do Bootstrap 5 para dar lugar aos Bootstrap Icons customizados */
+.custom-accordion-btn::after {
+  display: none !important;
+}
+
+/* Customização dos botões para manter a identidade visual profissional */
+.custom-accordion-btn {
+  background-color: #ffffff;
+  color: #212529;
+  transition: all 0.3s ease;
+  box-shadow: none !important;
+}
+
+.custom-accordion-btn:not(.collapsed) {
+  background-color: #f8f9fa;
+  color: #9dcd68; /* Azul padrão do Bootstrap, mude para a cor exata da Prokcel se necessário */
+}
+
+/* Estilização dos itens do Accordion */
+.accordion-item {
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.accordion-button {
+  padding: 1.2rem 1.5rem;
+}
+
+.accordion-body {
+  background-color: #ffffff;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Ícones de mais e menos com rotação suave */
+.bi {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Pequeno espaçamento para os blocos de texto */
+.dynamic-content {
+  border-top: 1px solid #edf2f7;
+}

@@ -6,6 +6,7 @@ import { ContactosComponent } from './pages/contactos/contactos.component';
 import { SobreNosComponent } from './pages/sobre-nos/sobre-nos.component';
 import { ServicoEstagiosComponent } from './pages/servico-estagios/servico-estagios.component';
 import { ServicoFormacaoComponent } from './pages/servico-formacao/servico-formacao.component';
+import { PerguntasFrequentesComponent } from './componente/perguntas-frequentes/perguntas-frequentes.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'sobre-nos', component: SobreNosComponent},
   { path: 'servico-estagios', component: ServicoEstagiosComponent },
   { path: 'servico-formacao', component: ServicoFormacaoComponent},
+  { path: 'faq', component: PerguntasFrequentesComponent },
   { path: '**', redirectTo: '' }  // rota coringa para redirecionar
 ];
 

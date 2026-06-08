@@ -17,6 +17,7 @@ import { HeroComponent } from './componente/hero/hero.component';
 import { SobreNosComponent } from './pages/sobre-nos/sobre-nos.component';
 import { ServicoEstagiosComponent } from './pages/servico-estagios/servico-estagios.component';
 import { ServicoFormacaoComponent } from './pages/servico-formacao/servico-formacao.component';
+import { PerguntasFrequentesComponent } from './componente/perguntas-frequentes/perguntas-frequentes.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ServicoFormacaoComponent } from './pages/servico-formacao/servico-forma
     HeroComponent,
     SobreNosComponent,
     ServicoEstagiosComponent,
-    ServicoFormacaoComponent
+    ServicoFormacaoComponent,
+    PerguntasFrequentesComponent
   ],
   imports: [
     FormsModule,
